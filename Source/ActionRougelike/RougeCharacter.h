@@ -6,6 +6,9 @@
 #include "GameFramework/Character.h"
 #include "RougeCharacter.generated.h"
 
+class USpringArmComponent;
+class UCameraComponent;
+
 UCLASS()
 class ACTIONROUGELIKE_API ARougeCharacter : public ACharacter
 {
@@ -16,6 +19,11 @@ public:
 	ARougeCharacter();
 
 protected:
+	
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	TObjectPtr<UCameraComponent> CameraComponent;
+	TObjectPtr<USpringArmComponent> SpringArmComponent;
+	
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
