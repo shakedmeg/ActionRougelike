@@ -9,9 +9,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/Projectiles/BP_MagicProjectile.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/Projectiles/BP_MagicProjectile.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ActionRougelike.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/ActionRougelike.uproject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/BP_PlayerCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/BP_PlayerCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/Input/IMC_DefaultPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/Input/IMC_DefaultPlayer.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Projectiles/RougeProjectileMagic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Projectiles/RougeProjectileMagic.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Projectiles/RougeProjectileMagic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Projectiles/RougeProjectileMagic.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774258716537</updated>
-      <workItem from="1774258728183" duration="13626000" />
+      <workItem from="1774258728183" duration="16164000" />
     </task>
     <servers />
   </component>
