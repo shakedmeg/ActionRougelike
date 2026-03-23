@@ -2,13 +2,13 @@
 
 
 #include "RougeProjectileMagic.h"
-
+#include  "NiagaraFunctionLibrary.h"
 #include "NiagaraComponent.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 
-// Sets default values
 ARougeProjectileMagic::ARougeProjectileMagic()
 {
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
@@ -22,5 +22,23 @@ ARougeProjectileMagic::ARougeProjectileMagic()
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMoveComp"));
 	ProjectileMovementComponent->InitialSpeed = 2000.f;
 	ProjectileMovementComponent->ProjectileGravityScale = 0.f;
+}
+
+void ARougeProjectileMagic::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	
+	SphereComponent->OnComponentHit.AddDynamic(this, &ARougeProjectileMagic::OnActorHit);
+}
+
+void ARougeProjectileMagic::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+{
+	// @todo: create our own damage type
+	TSubclassOf<UDamageType> DmgTypeClass = UDamageType::StaticClass();
+	UGameplayStatics::ApplyDamage(OtherActor, 10.f, GetInstigatorController(), this, DmgTypeClass);
+	
+	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ExplosionEffect, GetActorLocation());
+	
+	Destroy();
 }
 
