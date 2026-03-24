@@ -2,7 +2,6 @@
 
 
 #include "RougeCharacter.h"
-
 #include "EnhancedInputComponent.h"
 #include "NiagaraFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
