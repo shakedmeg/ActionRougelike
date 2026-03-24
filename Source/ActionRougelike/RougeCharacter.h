@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "RougeCharacter.generated.h"
 
+class UNiagaraSystem;
 class ARougeProjectileMagic;
 struct FInputActionInstance;
 struct FInputActionValue;
@@ -26,6 +27,12 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
 	TSubclassOf<ARougeProjectileMagic> ProjectileClass;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
+	TObjectPtr<UNiagaraSystem> CastingEffect;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
+	TObjectPtr<USoundBase> CastingSound;
 	
 	UPROPERTY(VisibleAnywhere, Category = "PrimaryAttack")
 	FName MuzzleSocketName;

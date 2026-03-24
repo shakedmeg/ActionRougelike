@@ -4,8 +4,10 @@
 #include "RougeCharacter.h"
 
 #include "EnhancedInputComponent.h"
+#include "NiagaraFunctionLibrary.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 #include "Projectiles/RougeProjectileMagic.h"
 
 
@@ -76,6 +78,11 @@ void ARougeCharacter::PrimaryAttack()
 	
 	const float AttackDelayTime = 0.2f;
 	
+	UNiagaraFunctionLibrary::SpawnSystemAttached(CastingEffect, GetMesh(), MuzzleSocketName,
+		FVector::ZeroVector, FRotator::ZeroRotator, EAttachLocation::Type::SnapToTarget, true);
+	
+	UGameplayStatics::PlaySound2D(this, CastingSound);
+	
 	GetWorldTimerManager().SetTimer(AttackTimerHandle, this, &ARougeCharacter::AttackTimerElapsed, AttackDelayTime);
 }
 
@@ -87,7 +94,9 @@ void ARougeCharacter::AttackTimerElapsed()
 	SpawnParams.Instigator = this;
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	
-	GetWorld()->SpawnActor<ARougeProjectileMagic>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+	AActor* NewProjectile = GetWorld()->SpawnActor<ARougeProjectileMagic>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+	
+	MoveIgnoreActorAdd(NewProjectile);
 }
 
 // Called every frame
