@@ -70,18 +70,27 @@ void ARougeCharacter::Look(const FInputActionInstance& InValue)
 
 void ARougeCharacter::PrimaryAttack()
 {
+	PlayAnimMontage(AttackMontage);
+	
+	FTimerHandle AttackTimerHandle;
+	
+	const float AttackDelayTime = 0.2f;
+	
+	GetWorldTimerManager().SetTimer(AttackTimerHandle, this, &ARougeCharacter::AttackTimerElapsed, AttackDelayTime);
+}
+
+void ARougeCharacter::AttackTimerElapsed()
+{
 	FVector SpawnLocation = GetMesh()->GetSocketLocation(MuzzleSocketName);
 	FRotator SpawnRotation = GetControlRotation();
 	FActorSpawnParameters SpawnParams;
 	SpawnParams.Instigator = this;
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	
-	
-	ARougeProjectileMagic* NewActor = GetWorld()->SpawnActor<ARougeProjectileMagic>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+	GetWorld()->SpawnActor<ARougeProjectileMagic>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
 }
 
 // Called every frame
-
 void ARougeCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
