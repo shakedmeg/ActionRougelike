@@ -3,7 +3,7 @@
 
 #include "RougeGameMode.h"
 
-#include "ActionRougelike/Player/RougePlayerController.h"
+#include "Player/RougePlayerController.h"
 
 ARougeGameMode::ARougeGameMode()
 {

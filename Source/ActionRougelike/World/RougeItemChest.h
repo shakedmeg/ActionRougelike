@@ -3,11 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "ActionRougelike/Core/RougeInteractionInterface.h"
+#include "Core/RougeInteractionInterface.h"
 #include "GameFramework/Actor.h"
 #include "RougeItemChest.generated.h"
 
 UCLASS()
-class ACTIONROUGELIKE_API ARougeItemChest : public AActor
+class ACTIONROUGELIKE_API ARougeItemChest : public AActor, public IRougeInteractionInterface
 {
 	GENERATED_BODY()
 
@@ -26,10 +28,10 @@ protected:
 	float AnimationTargetPitch = 120.f;
 	
 	float CurrentAnimationPitch = 0.0f;
-	
-	virtual void BeginPlay() override;
 
 public:
+	
+	void Interact() override;
 	
 	ARougeItemChest();
 	

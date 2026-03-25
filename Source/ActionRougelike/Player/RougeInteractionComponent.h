@@ -16,8 +16,13 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Components");
 	float InteractionRadius = 800.f;
+	
+	UPROPERTY()
+	TObjectPtr<AActor> SelectedActor;
 
 public:
+	
+	void Interact();
 	
 	URougeInteractionComponent();
 	

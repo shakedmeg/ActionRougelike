@@ -3,11 +3,21 @@
 
 #include "RougeInteractionComponent.h"
 
+#include "Core/RougeInteractionInterface.h"
 #include "Engine/OverlapResult.h"
 
 URougeInteractionComponent::URougeInteractionComponent()
 {
 	PrimaryComponentTick.bCanEverTick = true;
+}
+
+void URougeInteractionComponent::Interact()
+{
+	IRougeInteractionInterface* InteractInterface = Cast<IRougeInteractionInterface>(SelectedActor);
+	if (InteractInterface)
+	{
+		InteractInterface->Interact();
+	}
 }
 
 void URougeInteractionComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -29,36 +39,33 @@ void URougeInteractionComponent::TickComponent(float DeltaTime, ELevelTick TickT
 	
 	GetWorld()->OverlapMultiByChannel(Overlaps, Center, FQuat::Identity, CollisionChannel, Shape);
 	
-	DrawDebugSphere(GetWorld(), Center, InteractionRadius, 32.0f, FColor::White);
-	
-	
 	AActor* BestActor = nullptr;
 	float HighestDotResult = -1.0f;
 	
 	for (FOverlapResult& Overlap : Overlaps)
 	{
-		
 		FVector OverlapLocation = Overlap.GetActor()->GetActorLocation();
-		DrawDebugBox(GetWorld(), OverlapLocation, FVector(50.f), FColor::Red);
-		
 		FVector OverlapDirection = (OverlapLocation - Center).GetSafeNormal();
 		
 		float DotResult = FVector::DotProduct(OverlapDirection, PC->GetControlRotation().Vector());
-		
-		FString DebugString = FString::Printf(TEXT("Dot: %f"), DotResult);
-		
-		DrawDebugString(GetWorld(), OverlapLocation, DebugString, nullptr, FColor::White, 0.0f, true);
-		
 		if (DotResult > HighestDotResult)
 		{
 			BestActor = Overlap.GetActor();
 			HighestDotResult = DotResult;
 		}
+		
+		DrawDebugBox(GetWorld(), OverlapLocation, FVector(50.f), FColor::Red);
+		FString DebugString = FString::Printf(TEXT("Dot: %f"), DotResult);
+		DrawDebugString(GetWorld(), OverlapLocation, DebugString, nullptr, FColor::White, 0.0f, true);
 	}
+	
+	SelectedActor = BestActor;
 	
 	if (BestActor)
 	{
 		DrawDebugBox(GetWorld(), BestActor->GetActorLocation(), FVector(60.f), FColor::Green);
 	}
+	
+	DrawDebugSphere(GetWorld(), Center, InteractionRadius, 32.0f, FColor::White);
 }
 
