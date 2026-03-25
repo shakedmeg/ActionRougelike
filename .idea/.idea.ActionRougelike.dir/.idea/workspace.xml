@@ -8,9 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/World/BP_ItemChest.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/World/BP_ItemChest.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +41,8 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Kismet/Public/BlueprintCompilerExtension.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Kismet/Public/BlueprintDragDropMenuItem.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Kismet/Public/BlueprintNamespaceUtilities.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Persona/Private/AnimationEditorViewportClient.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Persona/Private/SMorphTargetViewer.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/PropertyEditor/Private/StringPrefixTree.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/SkeletalMeshEditor/Private/SControlRigMappingWindow.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Analytics/Analytics/Private/Interfaces/IAnalyticsProvider.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -200,7 +200,7 @@
       <workItem from="1774383300870" duration="2894000" />
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
-      <workItem from="1774446704805" duration="3927000" />
+      <workItem from="1774446704805" duration="4526000" />
     </task>
     <servers />
   </component>

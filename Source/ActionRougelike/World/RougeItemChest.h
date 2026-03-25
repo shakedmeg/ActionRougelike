@@ -28,6 +28,9 @@ protected:
 	float AnimationTargetPitch = 120.f;
 	
 	float CurrentAnimationPitch = 0.0f;
+	
+	UFUNCTION(BlueprintImplementableEvent)
+	void ChestAnimationComplete();
 
 public:
 	
