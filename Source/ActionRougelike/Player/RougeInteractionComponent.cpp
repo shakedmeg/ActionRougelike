@@ -3,6 +3,7 @@
 
 #include "RougeInteractionComponent.h"
 
+#include "RougeGameTypes.h"
 #include "Core/RougeInteractionInterface.h"
 #include "Engine/OverlapResult.h"
 
@@ -30,7 +31,7 @@ void URougeInteractionComponent::TickComponent(float DeltaTime, ELevelTick TickT
 	
 	// DrawDebugBox(GetWorld(), Center, FVector(20.f), FColor::Red);
 	
-	ECollisionChannel CollisionChannel = ECC_Visibility;
+	ECollisionChannel CollisionChannel = COLLISION_INTERACTION;
 	
 	FCollisionShape Shape;
 	Shape.SetSphere(InteractionRadius);
