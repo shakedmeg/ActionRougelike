@@ -11,6 +11,11 @@ UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class ACTIONROUGELIKE_API URougeInteractionComponent : public UActorComponent
 {
 	GENERATED_BODY()
+	
+protected:
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Components");
+	float InteractionRadius = 800.f;
 
 public:
 	

@@ -8,16 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerController.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerController.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/RougeCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/4/4B/Y8Y35C799L20Z3H0BGF1EG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/4/4B/Y8Y35C799L20Z3H0BGF1EG.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/4/SY/U71JB3J757CAOGGB5U9SH6.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/4/SY/U71JB3J757CAOGGB5U9SH6.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/9/VK/XMGX5MG871XY8YPXB4IB29.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/9/VK/XMGX5MG871XY8YPXB4IB29.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +176,7 @@
       <option name="presentableId" value="Default" />
       <updated>1774258716537</updated>
       <workItem from="1774258728183" duration="22172000" />
-      <workItem from="1774383300870" duration="2225000" />
+      <workItem from="1774383300870" duration="2894000" />
     </task>
     <servers />
   </component>
