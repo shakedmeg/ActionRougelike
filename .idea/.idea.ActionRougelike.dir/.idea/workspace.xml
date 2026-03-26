@@ -9,11 +9,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/World/BP_ItemChest.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/World/BP_ItemChest.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeInteractionInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeInteractionInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/Maps/P_OpenWorldTestMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/Maps/P_OpenWorldTestMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/E/N4/M9ZYOYLZTXVG6BZ1Q8X65I.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ActionRougelike/Maps/P_OpenWorldTestMap/E/N4/M9ZYOYLZTXVG6BZ1Q8X65I.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeExplosiveBarrel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeExplosiveBarrel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeExplosiveBarrel.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeExplosiveBarrel.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +208,7 @@
       <workItem from="1774383300870" duration="2894000" />
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
-      <workItem from="1774446704805" duration="6461000" />
+      <workItem from="1774446704805" duration="9652000" />
     </task>
     <servers />
   </component>

@@ -49,11 +49,22 @@ float ARougeExplosiveBarrel::TakeDamage(float DamageAmount, FDamageEvent const& 
 void ARougeExplosiveBarrel::Explode()
 {
 	bDidExplode = true;
+
+	if (ActiveBurningEffectComp)
+	{
+		ActiveBurningEffectComp->Deactivate();
+	}
 	
-	ActiveBurningEffectComp->Deactivate();
-	ActiveBurningSoundComp->Stop();
+	if (ActiveBurningSoundComp)
+	{
+		ActiveBurningSoundComp->Stop();
+	}
+	
 	
 	RadialForceComponent->FireImpulse();
+	
+	MeshComponent->AddImpulse(FVector::UpVector * 1000, NAME_None, true);
+	MeshComponent->AddAngularImpulseInDegrees(FVector::RightVector * 1000, NAME_None, true);
 	
 	UNiagaraFunctionLibrary::SpawnSystemAtLocation(this, ExplosionEffect, GetActorLocation());
 	
