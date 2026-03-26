@@ -17,7 +17,7 @@ ARougeItemChest::ARougeItemChest()
 	LidMeshComponent->SetupAttachment(BaseMeshComponent);
 }
 
-void ARougeItemChest::Interact()
+void ARougeItemChest::Interact_Implementation()
 {
 	// Play Animation
 	SetActorTickEnabled(true);

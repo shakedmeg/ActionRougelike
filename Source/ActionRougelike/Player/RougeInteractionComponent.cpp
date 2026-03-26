@@ -14,10 +14,14 @@ URougeInteractionComponent::URougeInteractionComponent()
 
 void URougeInteractionComponent::Interact()
 {
-	IRougeInteractionInterface* InteractInterface = Cast<IRougeInteractionInterface>(SelectedActor);
-	if (InteractInterface)
+	// IRougeInteractionInterface* InteractInterface = Cast<IRougeInteractionInterface>(SelectedActor);
+	// if (InteractInterface)
+	// {
+	// 	InteractInterface->Interact();
+	// }
+	if (SelectedActor)
 	{
-		InteractInterface->Interact();
+		IRougeInteractionInterface::Execute_Interact(SelectedActor);
 	}
 }
 

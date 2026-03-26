@@ -23,5 +23,6 @@ class ACTIONROUGELIKE_API IRougeInteractionInterface
 
 public:
 	
-	virtual void Interact() = 0;
+	UFUNCTION(BlueprintNativeEvent)
+	void Interact();
 };

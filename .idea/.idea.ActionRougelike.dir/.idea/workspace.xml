@@ -8,7 +8,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/World/BP_ItemChest.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/World/BP_ItemChest.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeInteractionInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeInteractionInterface.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeItemChest.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +40,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/FX/Niagara/Source/Niagara/Public/NiagaraPreviewGrid.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/FX/Niagara/Source/Niagara/Public/NiagaraWorldManager.h" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/Marketplace/Developer/RiderLink/Source/RD/src/rd_framework_cpp/src/main/base/IRdWireable.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/Runtime/ResonanceAudio/Source/ResonanceAudio/Private/ResonanceAudioLibrary/resonance_audio/dsp/occlusion_calculator.cc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Kismet/Internal/Reflection/FunctionUtilsPrivate.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Kismet/Private/SMyBlueprint.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/Kismet/Public/BlueprintCompilationManager.h" root0="FORCE_HIGHLIGHTING" />
@@ -46,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/PropertyEditor/Private/StringPrefixTree.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/SkeletalMeshEditor/Private/SControlRigMappingWindow.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Analytics/Analytics/Private/Interfaces/IAnalyticsProvider.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Core/Private/Sanitizer/RaceDetector.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/Package.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/InputComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/PrimitiveComponent.h" root0="FORCE_HIGHLIGHTING" />
@@ -200,7 +207,7 @@
       <workItem from="1774383300870" duration="2894000" />
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
-      <workItem from="1774446704805" duration="4526000" />
+      <workItem from="1774446704805" duration="6461000" />
     </task>
     <servers />
   </component>

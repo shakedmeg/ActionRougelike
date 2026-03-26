@@ -34,7 +34,7 @@ protected:
 
 public:
 	
-	void Interact() override;
+	virtual void Interact_Implementation() override;
 	
 	ARougeItemChest();
 	
