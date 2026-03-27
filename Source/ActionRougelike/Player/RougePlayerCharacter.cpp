@@ -4,6 +4,7 @@
 #include "RougePlayerCharacter.h"
 #include "EnhancedInputComponent.h"
 #include "NiagaraFunctionLibrary.h"
+#include "ActionSystem/RougeActionSystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -22,6 +23,8 @@ ARougePlayerCharacter::ARougePlayerCharacter()
 	
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp"));
 	CameraComponent->SetupAttachment(SpringArmComponent);
+	
+	ActionSystemComponent = CreateDefaultSubobject<URougeActionSystemComponent>(TEXT("ActionSystemComp"));
 	
 	MuzzleSocketName = "Muzzle_01";
 }
@@ -47,6 +50,16 @@ void ARougePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, PrimaryAttackProjectileClass);
 	EnhancedInput->BindAction(Input_SecondaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, SecondaryAttackProjectileClass);
 	EnhancedInput->BindAction(Input_SpecialAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, SpecialAttackProjectileClass);
+}
+
+float ARougePlayerCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent,
+	class AController* EventInstigator, AActor* DamageCauser)
+{
+	float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
+	
+	ActionSystemComponent->ApplyHealthChange(-ActualDamage);
+	
+	return ActualDamage;
 }
 
 void ARougePlayerCharacter::Move(const FInputActionValue& InValue)

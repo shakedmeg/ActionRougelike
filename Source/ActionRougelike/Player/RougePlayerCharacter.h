@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "RougePlayerCharacter.generated.h"
 
+class URougeActionSystemComponent;
 class ARougeProjectile;
 class UNiagaraSystem;
 class ARougeProjectileMagic;
@@ -29,6 +30,8 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+	
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
 protected:
 	
@@ -76,6 +79,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	TObjectPtr<USpringArmComponent> SpringArmComponent;
+	
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	TObjectPtr<URougeActionSystemComponent> ActionSystemComponent;
 
 
 	// Called when the game starts or when spawned
