@@ -6,12 +6,15 @@
 #include "Components/ActorComponent.h"
 #include "RougeActionSystemComponent.generated.h"
 
-
+USTRUCT(BlueprintType)
 struct FRougeAttributeSet
 {
+	GENERATED_BODY()
+	
 		FRougeAttributeSet()
 			: Health(100) {}
 	
+	UPROPERTY(BlueprintReadOnly)
 	float Health;
 };
 
@@ -26,6 +29,7 @@ public:
 	
 protected:
 	
+	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FRougeAttributeSet Attributes; 
 
 public:
