@@ -6,6 +6,7 @@
 #include "NiagaraFunctionLibrary.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
 #include "Camera/CameraComponent.h"
+#include "GameFramework/PawnMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "Projectiles/RougeProjectileMagic.h"
@@ -27,14 +28,6 @@ ARougePlayerCharacter::ARougePlayerCharacter()
 	ActionSystemComponent = CreateDefaultSubobject<URougeActionSystemComponent>(TEXT("ActionSystemComp"));
 	
 	MuzzleSocketName = "Muzzle_01";
-}
-
-// Called when the game starts or when spawned
-
-void ARougePlayerCharacter::BeginPlay()
-{
-	Super::BeginPlay();
-	
 }
 
 // Called to bind functionality to input
@@ -60,6 +53,13 @@ float ARougePlayerCharacter::TakeDamage(float DamageAmount, struct FDamageEvent 
 	ActionSystemComponent->ApplyHealthChange(-ActualDamage);
 	
 	return ActualDamage;
+}
+
+void ARougePlayerCharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	
+	ActionSystemComponent->OnHealthChanged.AddDynamic(this, &ARougePlayerCharacter::OnHealthChanged);
 }
 
 void ARougePlayerCharacter::Move(const FInputActionValue& InValue)
@@ -117,8 +117,14 @@ void ARougePlayerCharacter::ProjectileTimerElapsed(TSubclassOf<ARougeProjectile>
 	MoveIgnoreActorAdd(NewProjectile);
 }
 
-// Called every frame
-void ARougePlayerCharacter::Tick(float DeltaTime)
+void ARougePlayerCharacter::OnHealthChanged(float NewHealth, float OldHealth)
 {
-	Super::Tick(DeltaTime);
+	if (FMath::IsNearlyZero(NewHealth))
+	{
+		DisableInput(nullptr);
+		
+		GetMovementComponent()->StopMovementImmediately();
+		
+		PlayAnimMontage(DeathMontage);
+	}
 }

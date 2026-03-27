@@ -24,14 +24,13 @@ class ACTIONROUGELIKE_API ARougePlayerCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ARougePlayerCharacter();
-	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+	
+	virtual void PostInitializeComponents() override;
 
 protected:
 	
@@ -55,6 +54,9 @@ protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
 	TObjectPtr<UAnimMontage> AttackMontage;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Death")
+	TObjectPtr<UAnimMontage> DeathMontage;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputAction> Input_Move;
@@ -82,10 +84,6 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	TObjectPtr<URougeActionSystemComponent> ActionSystemComponent;
-
-
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
 	
 	void Move(const FInputActionValue& InValue);
 	
@@ -94,4 +92,7 @@ protected:
 	void StartProjectileAttack(TSubclassOf<ARougeProjectile> ProjectileClass);
 	
 	void ProjectileTimerElapsed(TSubclassOf<ARougeProjectile> ProjectileClass);
+	
+	UFUNCTION()
+	void OnHealthChanged(float NewHealth, float OldHealth);
 };

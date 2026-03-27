@@ -26,13 +26,14 @@ UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
 class ACTIONROUGELIKE_API URougeActionSystemComponent : public UActorComponent
 {
 	GENERATED_BODY()
+
+public:
 	
+	void ApplyHealthChange(float InValueChange);
+
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
-	
-public:
-	void ApplyHealthChange(float InValueChange);
-	
+
 protected:
 	
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
