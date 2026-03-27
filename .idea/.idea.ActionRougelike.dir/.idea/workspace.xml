@@ -8,10 +8,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/BP_GameMode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/BP_GameMode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,7 +222,7 @@
       <workItem from="1774383300870" duration="2894000" />
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
-      <workItem from="1774446704805" duration="37892000" />
+      <workItem from="1774446704805" duration="38360000" />
     </task>
     <servers />
   </component>
