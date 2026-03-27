@@ -2,7 +2,6 @@
 
 
 #include "RougeExplosiveBarrel.h"
-
 #include "NiagaraComponent.h"
 #include "NiagaraFunctionLibrary.h"
 #include "Components/AudioComponent.h"

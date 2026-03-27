@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "RougePlayerCharacter.generated.h"
 
+class ARougeProjectile;
 class UNiagaraSystem;
 class ARougeProjectileMagic;
 struct FInputActionInstance;
@@ -22,11 +23,14 @@ class ACTIONROUGELIKE_API ARougePlayerCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ARougePlayerCharacter();
+	
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 
 protected:
-	
-	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
-	TSubclassOf<ARougeProjectileMagic> ProjectileClass;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
 	TObjectPtr<UNiagaraSystem> CastingEffect;
@@ -36,28 +40,44 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere, Category = "PrimaryAttack")
 	FName MuzzleSocketName;
+
+	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
+	TSubclassOf<ARougeProjectile> PrimaryAttackProjectileClass;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
+	TSubclassOf<ARougeProjectile> SecondaryAttackProjectileClass;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
+	TSubclassOf<ARougeProjectile> SpecialAttackProjectileClass;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
 	TObjectPtr<UAnimMontage> AttackMontage;
-	
+
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputAction> Input_Move;
-	
+
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputAction> Input_Look;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	TObjectPtr<UInputAction> Input_Jump;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
 	TObjectPtr<UInputAction> Input_PrimaryAttack;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Input")
-	TObjectPtr<UInputAction> Input_Jump;
+	TObjectPtr<UInputAction> Input_SecondaryAttack;
 	
+	UPROPERTY(EditDefaultsOnly, Category = "Input")
+	TObjectPtr<UInputAction> Input_SpecialAttack;
+
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	TObjectPtr<UCameraComponent> CameraComponent;
-	
+
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	TObjectPtr<USpringArmComponent> SpringArmComponent;
-	
+
+
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
@@ -65,14 +85,7 @@ protected:
 	
 	void Look(const FInputActionInstance& InValue);
 	
-	void PrimaryAttack();
+	void StartProjectileAttack(TSubclassOf<ARougeProjectile> ProjectileClass);
 	
-	void AttackTimerElapsed();
-
-public:
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
-
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
+	void ProjectileTimerElapsed(TSubclassOf<ARougeProjectile> ProjectileClass);
 };

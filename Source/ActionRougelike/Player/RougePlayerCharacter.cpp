@@ -1,9 +1,9 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
+#include "RougePlayerCharacter.h"
 #include "EnhancedInputComponent.h"
 #include "NiagaraFunctionLibrary.h"
-#include "RougePlayerCharacter.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -43,8 +43,10 @@ void ARougePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	
 	EnhancedInput->BindAction(Input_Move, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Move);
 	EnhancedInput->BindAction(Input_Look, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Look);
-	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::PrimaryAttack);
 	EnhancedInput->BindAction(Input_Jump, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Jump);
+	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, PrimaryAttackProjectileClass);
+	EnhancedInput->BindAction(Input_SecondaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, SecondaryAttackProjectileClass);
+	EnhancedInput->BindAction(Input_SpecialAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, SpecialAttackProjectileClass);
 }
 
 void ARougePlayerCharacter::Move(const FInputActionValue& InValue)
@@ -70,7 +72,7 @@ void ARougePlayerCharacter::Look(const FInputActionInstance& InValue)
 	AddControllerYawInput(InputValue.X);
 }
 
-void ARougePlayerCharacter::PrimaryAttack()
+void ARougePlayerCharacter::StartProjectileAttack(TSubclassOf<ARougeProjectile> ProjectileClass)
 {
 	PlayAnimMontage(AttackMontage);
 	
@@ -79,14 +81,17 @@ void ARougePlayerCharacter::PrimaryAttack()
 	const float AttackDelayTime = 0.2f;
 	
 	UNiagaraFunctionLibrary::SpawnSystemAttached(CastingEffect, GetMesh(), MuzzleSocketName,
-		FVector::ZeroVector, FRotator::ZeroRotator, EAttachLocation::Type::SnapToTarget, true);
+	FVector::ZeroVector, FRotator::ZeroRotator, EAttachLocation::Type::SnapToTarget, true);
 	
 	UGameplayStatics::PlaySound2D(this, CastingSound);
 	
-	GetWorldTimerManager().SetTimer(AttackTimerHandle, this, &ARougePlayerCharacter::AttackTimerElapsed, AttackDelayTime);
+	FTimerDelegate Delegate;
+	Delegate.BindUObject(this, &ThisClass::ProjectileTimerElapsed, ProjectileClass);
+	
+	GetWorldTimerManager().SetTimer(AttackTimerHandle, Delegate, AttackDelayTime, false);
 }
 
-void ARougePlayerCharacter::AttackTimerElapsed()
+void ARougePlayerCharacter::ProjectileTimerElapsed(TSubclassOf<ARougeProjectile> ProjectileClass)
 {
 	FVector SpawnLocation = GetMesh()->GetSocketLocation(MuzzleSocketName);
 	FRotator SpawnRotation = GetControlRotation();
@@ -94,7 +99,7 @@ void ARougePlayerCharacter::AttackTimerElapsed()
 	SpawnParams.Instigator = this;
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	
-	AActor* NewProjectile = GetWorld()->SpawnActor<ARougeProjectileMagic>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
+	AActor* NewProjectile = GetWorld()->SpawnActor<ARougeProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
 	
 	MoveIgnoreActorAdd(NewProjectile);
 }
