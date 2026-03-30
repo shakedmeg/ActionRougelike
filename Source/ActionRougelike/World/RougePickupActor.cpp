@@ -18,12 +18,12 @@ ARougePickupActor::ARougePickupActor()
 	OverlapComponent->SetCollisionProfileName("Pickups");
 }
 
-	void ARougePickupActor::PostInitializeComponents()
-	{
-		Super::PostInitializeComponents();
-	
-		OverlapComponent->OnComponentBeginOverlap.AddDynamic(this, &ARougePickupActor::OnActorOverlapped);
-	}
+void ARougePickupActor::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+
+	OverlapComponent->OnComponentBeginOverlap.AddDynamic(this, &ARougePickupActor::OnActorOverlapped);
+}
 
 void ARougePickupActor::OnActorOverlapped(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
                                                 UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)

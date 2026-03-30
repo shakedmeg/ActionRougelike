@@ -15,6 +15,7 @@ ARougeExplosiveBarrel::ARougeExplosiveBarrel()
 	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComp"));
 	MeshComponent->SetSimulatePhysics(true);
 	MeshComponent->SetCollisionProfileName("PhysicsActor");
+	MeshComponent->SetCanEverAffectNavigation(false);
 	RootComponent = MeshComponent;
 	
 	RadialForceComponent = CreateDefaultSubobject<URadialForceComponent>(TEXT("RadialForceComp"));
