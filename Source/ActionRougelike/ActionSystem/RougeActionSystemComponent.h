@@ -11,11 +11,15 @@ struct FRougeAttributeSet
 {
 	GENERATED_BODY()
 	
-		FRougeAttributeSet()
-			: Health(100) {}
-	
+	FRougeAttributeSet() :
+	Health(100),
+	MaxHealth(100) {}
+
 	UPROPERTY(BlueprintReadOnly)
 	float Health;
+	
+	UPROPERTY(BlueprintReadOnly)
+	float MaxHealth;
 };
 
 
@@ -29,17 +33,16 @@ class ACTIONROUGELIKE_API URougeActionSystemComponent : public UActorComponent
 
 public:
 	
-	void ApplyHealthChange(float InValueChange);
-
+	URougeActionSystemComponent();
+	
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
+	
+	void ApplyHealthChange(float InValueChange);
+
+	bool IsFullHealth();
 
 protected:
-	
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
-	FRougeAttributeSet Attributes; 
-
-public:
-	
-	URougeActionSystemComponent();
+	FRougeAttributeSet Attributes;
 };
