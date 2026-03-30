@@ -9,8 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/RougeGameTypes.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/RougeGameTypes.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.folding",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.C/C++",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -224,7 +224,7 @@
       <workItem from="1774383300870" duration="2894000" />
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
-      <workItem from="1774446704805" duration="50018000" />
+      <workItem from="1774446704805" duration="55525000" />
     </task>
     <servers />
   </component>

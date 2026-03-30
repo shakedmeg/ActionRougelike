@@ -14,8 +14,14 @@ class ACTIONROUGELIKE_API URougeInteractionComponent : public UActorComponent
 	
 protected:
 	
-	UPROPERTY(EditDefaultsOnly, Category = "Components");
+	UPROPERTY(EditDefaultsOnly, Category = "Interaction");
 	float InteractionRadius = 800.f;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Interaction");
+	float DistanceToWeightScale = 2.0f;
+	
+	UPROPERTY(EditDefaultsOnly, Category = "Interaction");
+	float DirectionWeightScale = 1.0f;
 	
 	UPROPERTY()
 	TObjectPtr<AActor> SelectedActor;
