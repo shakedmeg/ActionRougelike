@@ -8,6 +8,13 @@
 #include "GameFramework/Character.h"
 #include "Projectiles/RougeProjectile.h"
 
+
+URougeBTTask_RangedAttack::URougeBTTask_RangedAttack()
+{
+	TargetActorKey.SelectedKeyName = NAME_TargetActor;
+}
+
+
 EBTNodeResult::Type URougeBTTask_RangedAttack::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	ACharacter* Pawn = Cast<ACharacter> (OwnerComp.GetAIOwner()->GetPawn());

@@ -4,8 +4,14 @@
 #include "RougeBTService_CheckRangeTo.h"
 
 #include "AIController.h"
+#include "RougeGameTypes.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
+
+URougeBTService_CheckRangeTo::URougeBTService_CheckRangeTo()
+{
+	TargetActorKey.SelectedKeyName = NAME_TargetActor;
+}
 
 void URougeBTService_CheckRangeTo::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
 {
