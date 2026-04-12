@@ -8,10 +8,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBB.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +22,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="8842" />
+    <option name="cachedIndexableFilesCount" value="8843" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -77,6 +76,8 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/InteractiveToolsFramework/Private/InputRouter.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -233,7 +234,7 @@
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
       <workItem from="1774446704805" duration="64089000" />
-      <workItem from="1776000184718" duration="2089000" />
+      <workItem from="1776000184718" duration="5578000" />
     </task>
     <servers />
   </component>
