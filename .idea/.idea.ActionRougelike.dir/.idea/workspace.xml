@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" afterDir="false" />
-    </list>
+    <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -234,7 +229,7 @@
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
       <workItem from="1774446704805" duration="64089000" />
-      <workItem from="1776000184718" duration="5578000" />
+      <workItem from="1776000184718" duration="6192000" />
     </task>
     <servers />
   </component>
