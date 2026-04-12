@@ -8,15 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeHealthPickup.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeHealthPickup.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougePickupActor.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougePickupActor.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/UI/PlayerHealth_WBP.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/UI/PlayerHealth_WBP.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBB.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBB.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,14 +23,13 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="8841" />
+    <option name="cachedIndexableFilesCount" value="8842" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://6" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/AI/MLAdapter/Source/MLAdapter/MLAdapter.Build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/AI/MassAI/Source/MassAIBehavior/MassAIBehavior.Build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/AI/MassAI/Source/MassAIDebug/MassAIDebug.Build.cs" root0="SKIP_HIGHLIGHTING" />
@@ -57,6 +52,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/PropertyEditor/Private/StringPrefixTree.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/SkeletalMeshEditor/Private/SControlRigMappingWindow.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Editor/UnrealEd/Private/EditorShowFlags.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/AIModule/Classes/BehaviorTree/BTService.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Analytics/Analytics/Private/Interfaces/IAnalyticsProvider.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Core/Private/Sanitizer/RaceDetector.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
@@ -79,6 +75,8 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Engine/Public/Physics/Experimental/ChaosInterfaceUtils.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Engine/Public/TimerManager.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/InteractiveToolsFramework/Private/InputRouter.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTService_CheckRangeTo.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -119,28 +117,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Uproject.ActionRougelike.executor": "Run",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
-    "junie.onboarding.icon.badge.shown": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.C/C++",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Uproject.ActionRougelike.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.C/C++&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1775980830647" />
     <option name="spentUsd" value="0.16583924" />
@@ -235,6 +233,7 @@
       <workItem from="1774438015942" duration="7375000" />
       <workItem from="1774446311518" duration="377000" />
       <workItem from="1774446704805" duration="64089000" />
+      <workItem from="1776000184718" duration="2089000" />
     </task>
     <servers />
   </component>
