@@ -7,14 +7,12 @@
 #include "RougePlayerCharacter.generated.h"
 
 class URougeActionSystemComponent;
-class ARougeProjectile;
-class UNiagaraSystem;
-class ARougeProjectileMagic;
 struct FInputActionInstance;
 struct FInputActionValue;
 class UInputAction;
 class USpringArmComponent;
 class UCameraComponent;
+class UAnimMontage;
 
 UCLASS()
 class ACTIONROUGELIKE_API ARougePlayerCharacter : public ACharacter
@@ -35,27 +33,6 @@ public:
 	URougeActionSystemComponent* GetActionSystemComponent() const { return ActionSystemComponent; }
 
 protected:
-	
-	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
-	TObjectPtr<UNiagaraSystem> CastingEffect;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
-	TObjectPtr<USoundBase> CastingSound;
-	
-	UPROPERTY(VisibleAnywhere, Category = "PrimaryAttack")
-	FName MuzzleSocketName;
-
-	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
-	TSubclassOf<ARougeProjectile> PrimaryAttackProjectileClass;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
-	TSubclassOf<ARougeProjectile> SecondaryAttackProjectileClass;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
-	TSubclassOf<ARougeProjectile> SpecialAttackProjectileClass;
-	
-	UPROPERTY(EditDefaultsOnly, Category = "PrimaryAttack")
-	TObjectPtr<UAnimMontage> AttackMontage;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Death")
 	TObjectPtr<UAnimMontage> DeathMontage;
@@ -90,10 +67,6 @@ protected:
 	void Move(const FInputActionValue& InValue);
 	
 	void Look(const FInputActionInstance& InValue);
-	
-	void StartProjectileAttack(TSubclassOf<ARougeProjectile> ProjectileClass);
-	
-	void ProjectileTimerElapsed(TSubclassOf<ARougeProjectile> ProjectileClass);
 	
 	void StartAction(FName InActionName);
 	

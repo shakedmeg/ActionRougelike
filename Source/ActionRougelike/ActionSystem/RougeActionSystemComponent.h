@@ -52,10 +52,15 @@ public:
 	
 	virtual void InitializeComponent() override;
 
+	void GrantAction(TSubclassOf<URougeAction> NewActionClass);
+
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FRougeAttributeSet Attributes;
 	
 	UPROPERTY()
 	TArray<TObjectPtr<URougeAction>> Actions;
+	
+	UPROPERTY(EditAnywhere, Category = "Actions")
+	TArray<TSubclassOf<URougeAction>> DefaultActions;
 };
