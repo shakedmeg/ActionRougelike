@@ -30,3 +30,13 @@ bool URougeActionSystemComponent::IsFullHealth()
 {
 	return Attributes.Health == Attributes.MaxHealth;
 }
+
+float URougeActionSystemComponent::GetHealth() const
+{
+	return Attributes.Health;
+}
+
+float URougeActionSystemComponent::GetMaxHealth() const
+{
+	return Attributes.MaxHealth;
+}

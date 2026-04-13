@@ -41,6 +41,10 @@ public:
 	void ApplyHealthChange(float InValueChange);
 
 	bool IsFullHealth();
+	
+	float GetHealth() const;
+	
+	float GetMaxHealth() const;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")

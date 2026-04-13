@@ -51,8 +51,8 @@ void ARougePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	EnhancedInput->BindAction(Input_SpecialAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, SpecialAttackProjectileClass);
 }
 
-float ARougePlayerCharacter::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent,
-	class AController* EventInstigator, AActor* DamageCauser)
+float ARougePlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
+	AController* EventInstigator, AActor* DamageCauser)
 {
 	float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	

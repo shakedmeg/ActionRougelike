@@ -17,10 +17,10 @@ URougeBTTask_RangedAttack::URougeBTTask_RangedAttack()
 
 EBTNodeResult::Type URougeBTTask_RangedAttack::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
-	ACharacter* Pawn = Cast<ACharacter> (OwnerComp.GetAIOwner()->GetPawn());
-	check(Pawn);
+	ACharacter* Character = Cast<ACharacter> (OwnerComp.GetAIOwner()->GetPawn());
+	check(Character);
 	
-	FVector SpawnLocation = Pawn->GetMesh()->GetSocketLocation(MuzzleSocketName);
+	FVector SpawnLocation = Character->GetMesh()->GetSocketLocation(MuzzleSocketName);
 	
 	AActor* TargetActor = Cast<AActor> (OwnerComp.GetBlackboardComponent()->GetValueAsObject(TargetActorKey.SelectedKeyName));
 	if (!IsValid(TargetActor))
@@ -37,7 +37,7 @@ EBTNodeResult::Type URougeBTTask_RangedAttack::ExecuteTask(UBehaviorTreeComponen
 	SpawnRotation.Yaw += FMath::FRandRange(-MaxBulletSpread, MaxBulletSpread);
 	
 	FActorSpawnParameters SpawnParams;
-	SpawnParams.Instigator = Pawn;
+	SpawnParams.Instigator = Character;
 	SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 	
 	AActor* NewProjectile = GetWorld()->SpawnActor<AActor>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
