@@ -95,6 +95,8 @@ protected:
 	
 	void ProjectileTimerElapsed(TSubclassOf<ARougeProjectile> ProjectileClass);
 	
+	void StartAction(FName InActionName);
+	
 	UFUNCTION()
 	void OnHealthChanged(float NewHealth, float OldHealth);
 };

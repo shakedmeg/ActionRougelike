@@ -3,10 +3,34 @@
 
 #include "RougeActionSystemComponent.h"
 
+#include "RougeAction.h"
+
 
 URougeActionSystemComponent::URougeActionSystemComponent()
 {
+	bWantsInitializeComponent = true;
+}
+
+void URougeActionSystemComponent::InitializeComponent()
+{
+	Super::InitializeComponent();
 	
+	URougeAction* NewAction = NewObject<URougeAction>(this, URougeAction::StaticClass());
+	Actions.Add(NewAction);
+}
+
+void URougeActionSystemComponent::StartAction(FName InActionName)
+{
+	for (URougeAction* Action : Actions)
+	{
+		if (Action->GetActionName() == InActionName)
+		{
+			Action->StartAction();
+			return;
+		}
+	}
+	
+	UE_LOG(LogTemp, Warning, TEXT("No Action found with name %s"), *InActionName.ToString());
 }
 
 void URougeActionSystemComponent::ApplyHealthChange(float InValueChange)

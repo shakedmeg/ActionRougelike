@@ -46,7 +46,7 @@ void ARougePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	EnhancedInput->BindAction(Input_Move, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Move);
 	EnhancedInput->BindAction(Input_Look, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Look);
 	EnhancedInput->BindAction(Input_Jump, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Jump);
-	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, PrimaryAttackProjectileClass);
+	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, FName("PrimaryAttack"));
 	EnhancedInput->BindAction(Input_SecondaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, SecondaryAttackProjectileClass);
 	EnhancedInput->BindAction(Input_SpecialAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartProjectileAttack, SpecialAttackProjectileClass);
 }
@@ -161,6 +161,11 @@ void ARougePlayerCharacter::ProjectileTimerElapsed(TSubclassOf<ARougeProjectile>
 		DrawDebugLine(World, SpawnLocation, SpawnLocation + GetControlRotation().Vector() * 5000.0f, FColor::Purple, false, DebugDrawDuration);
 	}
 #endif
+}
+
+void ARougePlayerCharacter::StartAction(FName InActionName)
+{
+	ActionSystemComponent->StartAction(InActionName);
 }
 
 void ARougePlayerCharacter::OnHealthChanged(float NewHealth, float OldHealth)

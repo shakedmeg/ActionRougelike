@@ -6,6 +6,8 @@
 #include "Components/ActorComponent.h"
 #include "RougeActionSystemComponent.generated.h"
 
+class URougeAction;
+
 USTRUCT(BlueprintType)
 struct FRougeAttributeSet
 {
@@ -35,6 +37,8 @@ public:
 	
 	URougeActionSystemComponent();
 	
+	void StartAction(FName InActionName);
+	
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;
 	
@@ -45,8 +49,13 @@ public:
 	float GetHealth() const;
 	
 	float GetMaxHealth() const;
+	
+	virtual void InitializeComponent() override;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
 	FRougeAttributeSet Attributes;
+	
+	UPROPERTY()
+	TArray<TObjectPtr<URougeAction>> Actions;
 };
