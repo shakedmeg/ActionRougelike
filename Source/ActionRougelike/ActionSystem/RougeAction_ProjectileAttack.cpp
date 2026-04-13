@@ -19,6 +19,8 @@ TAutoConsoleVariable<float> CVarProjectileAdjustmentDebugDraw(TEXT("game.project
 URougeAction_ProjectileAttack::URougeAction_ProjectileAttack()
 {
 	MuzzleSocketName = "Muzzle_01";
+	
+	CooldownTime = 0.5f;
 }
 
 void URougeAction_ProjectileAttack::StartAction_Implementation()
@@ -81,6 +83,8 @@ void URougeAction_ProjectileAttack::AttackTimerElapsed()
 	AActor* NewProjectile = World->SpawnActor<ARougeProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, SpawnParams);
 	
 	Character->MoveIgnoreActorAdd(NewProjectile);
+	
+	StopAction();
 
 #if !UE_BUILD_SHIPPING	
 	float DebugDrawDuration = CVarProjectileAdjustmentDebugDraw.GetValueOnGameThread();

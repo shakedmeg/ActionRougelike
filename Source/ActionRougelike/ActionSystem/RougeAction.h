@@ -17,11 +17,20 @@ class ACTIONROUGELIKE_API URougeAction : public UObject
 	
 public:
 	
+	bool CanStart() const;
+	
+	bool IsRunning() const
+	{
+		return bIsRunning;
+	}
+	
 	UFUNCTION(BlueprintNativeEvent, Category = "Actions")
 	void StartAction();
 	
 	UFUNCTION(BlueprintNativeEvent, Category = "Actions")
 	void StopAction();
+	
+	float GetCooldownTimeRemaining() const;
 	
 	UFUNCTION(BlueprintCallable)
 	URougeActionSystemComponent* GetOwningComponent() const;
@@ -34,6 +43,15 @@ public:
 protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Actions")
-	FName ActionName = FName("PrimaryAttack");
+	FName ActionName;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Actions")
+	float CooldownTime = 0.0f;
 	
+	// GameTime until the Action is available again
+	UPROPERTY(Transient)
+	float CooldownUntil = 0;
+	
+	UPROPERTY(Transient)
+	bool bIsRunning = false;
 };
