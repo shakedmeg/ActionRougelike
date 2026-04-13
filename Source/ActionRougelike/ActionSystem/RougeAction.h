@@ -17,8 +17,13 @@ class ACTIONROUGELIKE_API URougeAction : public UObject
 	
 public:
 	
-	virtual void StartAction();
+	UFUNCTION(BlueprintNativeEvent, Category = "Actions")
+	void StartAction();
 	
+	UFUNCTION(BlueprintNativeEvent, Category = "Actions")
+	void StopAction();
+	
+	UFUNCTION(BlueprintCallable)
 	URougeActionSystemComponent* GetOwningComponent() const;
 	
 	FName GetActionName() const

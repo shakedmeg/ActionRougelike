@@ -26,7 +26,7 @@ class ACTIONROUGELIKE_API URougeAction_ProjectileAttack : public URougeAction
 	
 public:
 	
-	virtual void StartAction() override;
+	virtual void StartAction_Implementation() override;
 	
 
 protected:

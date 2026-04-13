@@ -35,6 +35,8 @@ void ARougePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	EnhancedInput->BindAction(Input_Move, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Move);
 	EnhancedInput->BindAction(Input_Look, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Look);
 	EnhancedInput->BindAction(Input_Jump, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Jump);
+	EnhancedInput->BindAction(Input_Sprint, ETriggerEvent::Started, this, &ARougePlayerCharacter::StartAction, FName("Sprint"));
+	EnhancedInput->BindAction(Input_Sprint, ETriggerEvent::Completed, this, &ARougePlayerCharacter::StopAction, FName("Sprint"));
 	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, FName("PrimaryAttack"));
 	EnhancedInput->BindAction(Input_SecondaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, FName("SecondaryAttack"));
 	EnhancedInput->BindAction(Input_SpecialAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, FName("SpecialAttack"));
@@ -83,6 +85,11 @@ void ARougePlayerCharacter::Look(const FInputActionInstance& InValue)
 void ARougePlayerCharacter::StartAction(FName InActionName)
 {
 	ActionSystemComponent->StartAction(InActionName);
+}
+
+void ARougePlayerCharacter::StopAction(FName InActionName)
+{
+	ActionSystemComponent->StopAction(InActionName);
 }
 
 void ARougePlayerCharacter::OnHealthChanged(float NewHealth, float OldHealth)
