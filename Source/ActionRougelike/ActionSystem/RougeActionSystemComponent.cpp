@@ -2,10 +2,8 @@
 
 
 #include "RougeActionSystemComponent.h"
-
 #include "RougeAction.h"
 #include "RougeAttributeSet.h"
-#include "SharedGameplayTags.h"
 
 
 URougeActionSystemComponent::URougeActionSystemComponent()
@@ -40,6 +38,12 @@ void URougeActionSystemComponent::InitializeComponent()
 			GrantAction(ActionClass);
 		}
 	}
+}
+
+void URougeActionSystemComponent::BeginPlay()
+{
+	Super::BeginPlay();
+	Attributes->InitializeAttributes();
 }
 
 void URougeActionSystemComponent::GrantAction(TSubclassOf<URougeAction> NewActionClass)

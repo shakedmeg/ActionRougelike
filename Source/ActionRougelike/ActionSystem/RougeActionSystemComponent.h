@@ -12,7 +12,7 @@ struct FGameplayTag;
 class URougeAction;
 class URougeAttributeSet;
 
-UENUM()
+UENUM(BlueprintType)
 enum EAttributeModifyType
 {
 	Base,
@@ -36,6 +36,7 @@ public:
 	void StartAction(FGameplayTag InActionName);
 	void StopAction(FGameplayTag InActionName);
 	
+	UFUNCTION(BlueprintCallable)
 	void ApplyAttributeChange(FGameplayTag AttributeTag, float Delta, EAttributeModifyType ModifyType);
 	
 	FRougeAttribute* GetAttribute(FGameplayTag InAttributeTag) const;
@@ -46,7 +47,9 @@ public:
 
 	void GrantAction(TSubclassOf<URougeAction> NewActionClass);
 	
-	FGameplayTagContainer ActiveGameplayTags; 
+	FGameplayTagContainer ActiveGameplayTags;
+	
+	virtual void BeginPlay() override;
 
 protected:
 	

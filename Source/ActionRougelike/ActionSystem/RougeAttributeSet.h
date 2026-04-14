@@ -6,6 +6,8 @@
 #include "UObject/Object.h"
 #include "RougeAttributeSet.generated.h"
 
+class URougeActionSystemComponent;
+
 USTRUCT()
 struct FRougeAttribute
 {
@@ -36,8 +38,12 @@ UCLASS()
 class ACTIONROUGELIKE_API URougeAttributeSet : public UObject
 {
 	GENERATED_BODY()
-	
+
 public:
+	
+	URougeActionSystemComponent* GetOwningComponent() const;
+	
+	virtual void InitializeAttributes() {};
 	
 	virtual void PostAttributeChanged() {};
 };
@@ -60,4 +66,41 @@ public:
 	
 	URougeHealthAttributeSet();
 	
+};
+
+UCLASS()
+class URougePawnAttributeSet : public URougeHealthAttributeSet
+{
+	GENERATED_BODY()
+
+public:
+	
+	// Walking speed directly linked with Character Movement Component
+	UPROPERTY(EditAnywhere, Category = Attributes)
+	FRougeAttribute MoveSpeed;
+	
+	virtual void InitializeAttributes();
+	
+	virtual void PostAttributeChanged() override;
+	
+	void ApplyMoveSpeed();
+	
+	URougePawnAttributeSet();
+	
+};
+
+UCLASS()
+class URougePlayerAttributeSet : public URougePawnAttributeSet
+{
+	GENERATED_BODY()
+};
+
+
+UCLASS()
+class URougeMonsterAttributeSet : public URougePawnAttributeSet
+{
+	GENERATED_BODY()
+	
+public:
+	URougeMonsterAttributeSet();
 };
