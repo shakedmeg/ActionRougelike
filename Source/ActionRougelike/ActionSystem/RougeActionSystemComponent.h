@@ -9,23 +9,7 @@
 
 struct FGameplayTag;
 class URougeAction;
-
-USTRUCT(BlueprintType)
-struct FRougeAttributeSet
-{
-	GENERATED_BODY()
-	
-	FRougeAttributeSet() :
-	Health(100),
-	MaxHealth(100) {}
-
-	UPROPERTY(BlueprintReadOnly)
-	float Health;
-	
-	UPROPERTY(BlueprintReadOnly)
-	float MaxHealth;
-};
-
+class URougeAttributeSet;
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChanged, float, NewHealth, float, OldHealth);
 
@@ -60,8 +44,12 @@ public:
 	FGameplayTagContainer ActiveGameplayTags; 
 
 protected:
-	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
-	FRougeAttributeSet Attributes;
+	
+	UPROPERTY()
+	TObjectPtr<URougeAttributeSet> Attributes;
+	
+	UPROPERTY(EditAnywhere, Category = Attributes, NoClear)
+	TSubclassOf<URougeAttributeSet> AttributeSetClass;
 	
 	UPROPERTY()
 	TArray<TObjectPtr<URougeAction>> Actions;

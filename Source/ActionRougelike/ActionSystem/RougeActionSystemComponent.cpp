@@ -4,16 +4,21 @@
 #include "RougeActionSystemComponent.h"
 
 #include "RougeAction.h"
+#include "RougeAttributeSet.h"
 
 
 URougeActionSystemComponent::URougeActionSystemComponent()
 {
 	bWantsInitializeComponent = true;
+	
+	AttributeSetClass = URougeAttributeSet::StaticClass();
 }
 
 void URougeActionSystemComponent::InitializeComponent()
 {
 	Super::InitializeComponent();
+	
+	Attributes = NewObject<URougeAttributeSet>(this, AttributeSetClass);
 
 	for (TSubclassOf<URougeAction> ActionClass : DefaultActions)
 	{
@@ -63,32 +68,35 @@ void URougeActionSystemComponent::StopAction(FGameplayTag InActionName)
 
 void URougeActionSystemComponent::ApplyHealthChange(float InValueChange)
 {
-	float OldHealth = Attributes.Health;
-	
-	float MaxHealth = Attributes.MaxHealth;
-	
-	Attributes.Health = FMath::Clamp(Attributes.Health + InValueChange, 0.0f, MaxHealth);
-	
-	if (!FMath::IsNearlyEqual(OldHealth, Attributes.Health))
-	{
-		OnHealthChanged.Broadcast(Attributes.Health, OldHealth);
-	}
-	
-	
-	UE_LOG(LogTemp, Log, TEXT("New Health: %f, Max Health: %f"), Attributes.Health, MaxHealth);
+	// float OldHealth = Attributes.Health;
+	//
+	// float MaxHealth = Attributes.MaxHealth;
+	//
+	// Attributes.Health = FMath::Clamp(Attributes.Health + InValueChange, 0.0f, MaxHealth);
+	//
+	// if (!FMath::IsNearlyEqual(OldHealth, Attributes.Health))
+	// {
+	// 	OnHealthChanged.Broadcast(Attributes.Health, OldHealth);
+	// }
+	//
+	//
+	// UE_LOG(LogTemp, Log, TEXT("New Health: %f, Max Health: %f"), Attributes.Health, MaxHealth);
 }
 
 bool URougeActionSystemComponent::IsFullHealth()
 {
-	return Attributes.Health == Attributes.MaxHealth;
+	// return Attributes.Health == Attributes.MaxHealth;
+	return true;
 }
 
 float URougeActionSystemComponent::GetHealth() const
 {
-	return Attributes.Health;
+	// return Attributes.Health;
+	return 0.0f;
 }
 
 float URougeActionSystemComponent::GetMaxHealth() const
 {
-	return Attributes.MaxHealth;
+	// return Attributes.MaxHealth;
+	return 0.0f;
 }
