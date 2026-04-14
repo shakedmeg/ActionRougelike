@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "Components/ActorComponent.h"
 #include "RougeActionSystemComponent.generated.h"
 
@@ -55,6 +56,8 @@ public:
 	virtual void InitializeComponent() override;
 
 	void GrantAction(TSubclassOf<URougeAction> NewActionClass);
+	
+	FGameplayTagContainer ActiveGameplayTags; 
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = "Attributes")
