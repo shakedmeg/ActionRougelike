@@ -58,7 +58,8 @@ void ARougePlayerCharacter::PostInitializeComponents()
 {
 	Super::PostInitializeComponents();
 	
-	ActionSystemComponent->OnHealthChanged.AddDynamic(this, &ARougePlayerCharacter::OnHealthChanged);
+	FOnAttributeChanged& Event =  ActionSystemComponent->GetAttributeListener(SharedGameplayTag::Attribute_Health);
+	Event.AddUObject(this, &ThisClass::OnHealthChanged);
 }
 
 void ARougePlayerCharacter::Move(const FInputActionValue& InValue)
@@ -94,7 +95,7 @@ void ARougePlayerCharacter::StopAction(FGameplayTag InActionName)
 	ActionSystemComponent->StopAction(InActionName);
 }
 
-void ARougePlayerCharacter::OnHealthChanged(float NewHealth, float OldHealth)
+void ARougePlayerCharacter::OnHealthChanged(FGameplayTag AttributeTag, float NewHealth, float OldHealth)
 {
 	if (FMath::IsNearlyZero(NewHealth))
 	{

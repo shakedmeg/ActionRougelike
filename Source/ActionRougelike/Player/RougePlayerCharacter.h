@@ -73,8 +73,8 @@ protected:
 	void Look(const FInputActionInstance& InValue);
 	
 	void StartAction(FGameplayTag InActionName);
+	
 	void StopAction(FGameplayTag InActionName);
 	
-	UFUNCTION()
-	void OnHealthChanged(float NewHealth, float OldHealth);
+	void OnHealthChanged(FGameplayTag AttributeTag, float NewHealth, float OldHealth);
 };

@@ -5,6 +5,7 @@
 
 #include "RougeAction.h"
 #include "RougeAttributeSet.h"
+#include "SharedGameplayTags.h"
 
 
 URougeActionSystemComponent::URougeActionSystemComponent()
@@ -99,7 +100,13 @@ void URougeActionSystemComponent::ApplyAttributeChange(FGameplayTag AttributeTag
 	default:
 		check(false);
 	}
-		Attributes->PostAttributeChanged();
+	
+	Attributes->PostAttributeChanged();
+	
+	if (FOnAttributeChanged* Event = AttributeListeners.Find(AttributeTag))
+	{
+		Event->Broadcast(AttributeTag, FoundAttribute->GetValue(), OldValue);
+	}
 	
 	UE_LOGFMT(LogTemp, Log, "Attribute: {0}, New: {1}, Old: {2}", AttributeTag.ToString(), FoundAttribute->GetValue(), OldValue);
 }
@@ -109,4 +116,9 @@ FRougeAttribute* URougeActionSystemComponent::GetAttribute(FGameplayTag InAttrib
 	FRougeAttribute* FoundAttribute = *CachedAttributes.Find(InAttributeTag);
 	
 	return FoundAttribute;
+}
+
+FOnAttributeChanged& URougeActionSystemComponent::GetAttributeListener(FGameplayTag InAttributeTag)
+{
+	return AttributeListeners.FindOrAdd(InAttributeTag);
 }

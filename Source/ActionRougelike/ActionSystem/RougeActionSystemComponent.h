@@ -21,8 +21,7 @@ enum EAttributeModifyType
 	Invalid
 };
 
-
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams(FOnHealthChanged, float, NewHealth, float, OldHealth);
+DECLARE_MULTICAST_DELEGATE_ThreeParams(FOnAttributeChanged, FGameplayTag /*AttributeTag*/, float /*NewAttributeValue*/, float /*OldAttributeValue*/);
 
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
@@ -37,12 +36,11 @@ public:
 	void StartAction(FGameplayTag InActionName);
 	void StopAction(FGameplayTag InActionName);
 	
-	UPROPERTY(BlueprintAssignable)
-	FOnHealthChanged OnHealthChanged;
-	
 	void ApplyAttributeChange(FGameplayTag AttributeTag, float Delta, EAttributeModifyType ModifyType);
 	
 	FRougeAttribute* GetAttribute(FGameplayTag InAttributeTag) const;
+	
+	FOnAttributeChanged& GetAttributeListener(FGameplayTag InAttributeTag);
 	
 	virtual void InitializeComponent() override;
 
@@ -59,6 +57,8 @@ protected:
 	
 	UPROPERTY(EditAnywhere, Category = Attributes, NoClear)
 	TSubclassOf<URougeAttributeSet> AttributeSetClass;
+	
+	TMap<FGameplayTag, FOnAttributeChanged> AttributeListeners;
 	
 	UPROPERTY()
 	TArray<TObjectPtr<URougeAction>> Actions;
