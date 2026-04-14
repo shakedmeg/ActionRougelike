@@ -19,6 +19,18 @@ void URougeActionSystemComponent::InitializeComponent()
 	Super::InitializeComponent();
 	
 	Attributes = NewObject<URougeAttributeSet>(this, AttributeSetClass);
+	
+	for (TFieldIterator<FStructProperty> PropIt(Attributes->GetClass()); PropIt; ++PropIt)
+	{
+		FRougeAttribute* FoundAttribute = PropIt->ContainerPtrToValuePtr<FRougeAttribute>(Attributes);
+		
+		PropIt->GetName();
+		
+		FName AttributeTagName = FName("Attribute." + PropIt->GetName());
+		FGameplayTag AttributeTag = FGameplayTag::RequestGameplayTag(AttributeTagName);
+		CachedAttributes.Add(AttributeTag, FoundAttribute);
+	}
+	
 
 	for (TSubclassOf<URougeAction> ActionClass : DefaultActions)
 	{
@@ -89,14 +101,9 @@ bool URougeActionSystemComponent::IsFullHealth()
 	return true;
 }
 
-float URougeActionSystemComponent::GetHealth() const
+FRougeAttribute* URougeActionSystemComponent::GetAttribute(FGameplayTag InAttributeTag) const
 {
-	// return Attributes.Health;
-	return 0.0f;
-}
-
-float URougeActionSystemComponent::GetMaxHealth() const
-{
-	// return Attributes.MaxHealth;
-	return 0.0f;
+	FRougeAttribute* FoundAttribute = *CachedAttributes.Find(InAttributeTag);
+	
+	return FoundAttribute;
 }

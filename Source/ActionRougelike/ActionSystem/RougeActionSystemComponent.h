@@ -7,6 +7,7 @@
 #include "Components/ActorComponent.h"
 #include "RougeActionSystemComponent.generated.h"
 
+struct FRougeAttribute;
 struct FGameplayTag;
 class URougeAction;
 class URougeAttributeSet;
@@ -33,9 +34,7 @@ public:
 
 	bool IsFullHealth();
 	
-	float GetHealth() const;
-	
-	float GetMaxHealth() const;
+	FRougeAttribute* GetAttribute(FGameplayTag InAttributeTag) const;
 	
 	virtual void InitializeComponent() override;
 
@@ -47,6 +46,8 @@ protected:
 	
 	UPROPERTY()
 	TObjectPtr<URougeAttributeSet> Attributes;
+	
+	TMap<FGameplayTag, FRougeAttribute*> CachedAttributes;
 	
 	UPROPERTY(EditAnywhere, Category = Attributes, NoClear)
 	TSubclassOf<URougeAttributeSet> AttributeSetClass;
