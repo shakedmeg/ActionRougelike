@@ -10,8 +10,8 @@ void URougeAction::StartAction_Implementation()
 	
 	float GameTime = GetWorld()->TimeSeconds;
 	
-	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ActionName, GameTime);
-	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ("ActionName", ActionName), ("WorldTime", GameTime));
+	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ActionName.ToString(), GameTime);
+	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ("ActionName", ActionName.ToString()), ("WorldTime", GameTime));
 	
 	CooldownUntil = GetWorld()->TimeSeconds + CooldownTime;
 }
@@ -21,8 +21,8 @@ void URougeAction::StopAction_Implementation()
 	bIsRunning = false;
 	
 	float GameTime = GetWorld()->TimeSeconds;
-	UE_LOGFMT(LogTemp, Log, "Stopped Action {ActionName} - {WorldTime}", ActionName, GameTime);
-	UE_LOGFMT(LogTemp, Log, "Stopped Action {ActionName} - {WorldTime}", ("ActionName", ActionName), ("WorldTime", GameTime));
+	UE_LOGFMT(LogTemp, Log, "Stopped Action {ActionName} - {WorldTime}", ActionName.ToString(), GameTime);
+	UE_LOGFMT(LogTemp, Log, "Stopped Action {ActionName} - {WorldTime}", ("ActionName", ActionName.ToString()), ("WorldTime", GameTime));
 }
 
 bool URougeAction::CanStart() const

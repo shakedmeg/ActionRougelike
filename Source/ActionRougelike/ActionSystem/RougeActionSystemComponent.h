@@ -6,6 +6,7 @@
 #include "Components/ActorComponent.h"
 #include "RougeActionSystemComponent.generated.h"
 
+struct FGameplayTag;
 class URougeAction;
 
 USTRUCT(BlueprintType)
@@ -37,8 +38,8 @@ public:
 	
 	URougeActionSystemComponent();
 	
-	void StartAction(FName InActionName);
-	void StopAction(FName InActionName);
+	void StartAction(FGameplayTag InActionName);
+	void StopAction(FGameplayTag InActionName);
 	
 	UPROPERTY(BlueprintAssignable)
 	FOnHealthChanged OnHealthChanged;

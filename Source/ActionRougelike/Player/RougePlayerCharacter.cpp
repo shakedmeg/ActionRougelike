@@ -3,6 +3,8 @@
 
 #include "RougePlayerCharacter.h"
 #include "EnhancedInputComponent.h"
+#include "GameplayTagContainer.h"
+#include "SharedGameplayTags.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/PawnMovementComponent.h"
@@ -35,11 +37,11 @@ void ARougePlayerCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	EnhancedInput->BindAction(Input_Move, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Move);
 	EnhancedInput->BindAction(Input_Look, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Look);
 	EnhancedInput->BindAction(Input_Jump, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::Jump);
-	EnhancedInput->BindAction(Input_Sprint, ETriggerEvent::Started, this, &ARougePlayerCharacter::StartAction, FName("Sprint"));
-	EnhancedInput->BindAction(Input_Sprint, ETriggerEvent::Completed, this, &ARougePlayerCharacter::StopAction, FName("Sprint"));
-	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, FName("PrimaryAttack"));
-	EnhancedInput->BindAction(Input_SecondaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, FName("SecondaryAttack"));
-	EnhancedInput->BindAction(Input_SpecialAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, FName("SpecialAttack"));
+	EnhancedInput->BindAction(Input_Sprint, ETriggerEvent::Started, this, &ARougePlayerCharacter::StartAction, SharedGameplayTag::Action_Sprint.GetTag());
+	EnhancedInput->BindAction(Input_Sprint, ETriggerEvent::Completed, this, &ARougePlayerCharacter::StopAction, SharedGameplayTag::Action_Sprint.GetTag());
+	EnhancedInput->BindAction(Input_PrimaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, SharedGameplayTag::Action_PrimaryAttack.GetTag());
+	EnhancedInput->BindAction(Input_SecondaryAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, SharedGameplayTag::Action_SecondaryAttack.GetTag());
+	EnhancedInput->BindAction(Input_SpecialAttack, ETriggerEvent::Triggered, this, &ARougePlayerCharacter::StartAction, SharedGameplayTag::Action_SpecialAttack.GetTag());
 }
 
 float ARougePlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
@@ -82,12 +84,12 @@ void ARougePlayerCharacter::Look(const FInputActionInstance& InValue)
 	AddControllerYawInput(InputValue.X);
 }
 
-void ARougePlayerCharacter::StartAction(FName InActionName)
+void ARougePlayerCharacter::StartAction(FGameplayTag InActionName)
 {
 	ActionSystemComponent->StartAction(InActionName);
 }
 
-void ARougePlayerCharacter::StopAction(FName InActionName)
+void ARougePlayerCharacter::StopAction(FGameplayTag InActionName)
 {
 	ActionSystemComponent->StopAction(InActionName);
 }

@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "RougePlayerCharacter.generated.h"
 
+struct FGameplayTag;
 class URougeActionSystemComponent;
 struct FInputActionInstance;
 struct FInputActionValue;
@@ -71,8 +72,8 @@ protected:
 	
 	void Look(const FInputActionInstance& InValue);
 	
-	void StartAction(FName InActionName);
-	void StopAction(FName InActionName);
+	void StartAction(FGameplayTag InActionName);
+	void StopAction(FGameplayTag InActionName);
 	
 	UFUNCTION()
 	void OnHealthChanged(float NewHealth, float OldHealth);

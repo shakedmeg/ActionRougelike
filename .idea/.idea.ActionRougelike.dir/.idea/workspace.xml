@@ -14,17 +14,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTDecorator_IsLowHealth.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTDecorator_IsLowHealth.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_HealSelf.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_HealSelf.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ActionRougelike.uproject.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ActionRougelike.uproject.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/AI/EQS_MoveToTarget.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/AI/EQS_MoveToTarget.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ActionRougelike/AI/MinionRangedBT.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeAICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeAICharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeAICharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeAICharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionRougelike.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionRougelike.Build.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.cpp" afterDir="false" />
@@ -39,7 +33,7 @@
     <option name="firstShow" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="143" />
+    <option name="cachedIndexableFilesCount" value="5343" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -105,8 +99,12 @@
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_RangedAttack.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeEnvQueryContext_TargetActor.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/AI/RougeEnvQueryContext_TargetActor.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction_ProjectileAttack.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAction_ProjectileAttack.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeInteractionInterface.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -122,6 +120,8 @@
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Projectiles/RougeProjectileTeleport.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Projectiles/RougeProjectileTeleport.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/RougeGameTypes.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/World/RougeExplosiveBarrel.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/World/RougeExplosiveBarrel.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/World/RougeHealthPickup.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -266,7 +266,7 @@
       <workItem from="1774446311518" duration="377000" />
       <workItem from="1774446704805" duration="64089000" />
       <workItem from="1776000184718" duration="12632000" />
-      <workItem from="1776067715908" duration="7256000" />
+      <workItem from="1776067715908" duration="24700000" />
     </task>
     <servers />
   </component>

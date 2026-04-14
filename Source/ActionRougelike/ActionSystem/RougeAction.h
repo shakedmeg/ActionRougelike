@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameplayTagContainer.h"
 #include "UObject/Object.h"
 #include "RougeAction.generated.h"
 
@@ -35,7 +36,7 @@ public:
 	UFUNCTION(BlueprintCallable)
 	URougeActionSystemComponent* GetOwningComponent() const;
 	
-	FName GetActionName() const
+	FGameplayTag GetActionName() const
 	{
 		return ActionName;
 	}
@@ -43,7 +44,7 @@ public:
 protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Actions")
-	FName ActionName;
+	FGameplayTag ActionName;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Actions")
 	float CooldownTime = 0.0f;
