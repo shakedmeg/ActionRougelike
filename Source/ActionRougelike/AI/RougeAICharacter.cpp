@@ -3,6 +3,7 @@
 
 #include "RougeAICharacter.h"
 
+#include "SharedGameplayTags.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
 
 
@@ -18,7 +19,7 @@ float ARougeAICharacter::TakeDamage(float DamageAmount, FDamageEvent const& Dama
 {
 	float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	
-	ActionSystemComponent->ApplyHealthChange(-ActualDamage);
+	ActionSystemComponent->ApplyAttributeChange(SharedGameplayTag::Attribute_Health, -ActualDamage, Base);
 	
 	return ActualDamage;
 }

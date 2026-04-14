@@ -3,7 +3,9 @@
 
 #include "RougeHealthPickup.h"
 
+#include "SharedGameplayTags.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
+#include "Core/RougeGameplayStatics.h"
 #include "Kismet/GameplayStatics.h"
 #include "Player/RougePlayerCharacter.h"
 
@@ -19,9 +21,9 @@ void ARougeHealthPickup::OnActorOverlapped(UPrimitiveComponent* OverlappedCompon
 	if (PlayerCharacter)
 	{
 		URougeActionSystemComponent* ActionSystem = PlayerCharacter->GetActionSystemComponent();
-		if (!ActionSystem->IsFullHealth())
+		if (!URougeGameplayStatics::IsFullHealth(ActionSystem))
 		{
-			PlayerCharacter->GetActionSystemComponent()->ApplyHealthChange(HealingAmount);
+			PlayerCharacter->GetActionSystemComponent()->ApplyAttributeChange(SharedGameplayTag::Attribute_Health, HealingAmount, Base);
 			UGameplayStatics::PlaySoundAtLocation(this, PickupSound, GetActorLocation(), FRotator::ZeroRotator);
 			Destroy();
 			

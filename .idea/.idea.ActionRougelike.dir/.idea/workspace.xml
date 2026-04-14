@@ -14,11 +14,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2878e18-f6d1-4aa7-afc5-6a486f7c0665" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameplayStatics.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameplayStatics.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ActionRougelike.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGameplayTags.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTDecorator_IsLowHealth.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTDecorator_IsLowHealth.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeAICharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeAICharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_HealSelf.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/AI/RougeBTTask_HealSelf.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeActionSystemComponent.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAttributeSet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAttributeSet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAttributeSet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/Player/RougePlayerCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/SharedGameplayTags.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeHealthPickup.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/ActionRougelike/World/RougeHealthPickup.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +48,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/AI/MLAdapter/Source/MLAdapter/MLAdapter.Build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/AI/MassAI/Source/MassAIBehavior/MassAIBehavior.Build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/AI/MassAI/Source/MassAIDebug/MassAIDebug.Build.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/Cameras/GameplayCameras/Source/GameplayCameras/Private/Core/RootCameraNode.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/Cameras/GameplayCameras/Source/GameplayCameras/Private/Core/RootCameraNode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/Developer/Concert/ConcertUI/ConcertSharedSlate/Source/ConcertSharedSlate/ConcertSharedSlate.Build.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/EnhancedInput/Source/EnhancedInput/Private/EnhancedInputComponent.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Plugins/FX/Niagara/Source/Niagara/Public/NiagaraCompilationTypes.h" root0="SKIP_HIGHLIGHTING" />
@@ -69,6 +78,7 @@
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Analytics/Analytics/Private/Interfaces/IAnalyticsProvider.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Core/Private/Sanitizer/RaceDetector.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Core/Public/Math/UnrealMathUtility.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Core/Public/Sanitizer/RaceDetector.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/Templates/Casts.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/CoreUObject/Public/UObject/Package.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Shared/EpicGames/UE_5.6/Engine/Source/Runtime/Engine/Classes/Components/InputComponent.h" root0="FORCE_HIGHLIGHTING" />
@@ -109,6 +119,8 @@
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/ActionSystem/RougeAttributeSet.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameMode.h" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameplayStatics.cpp" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeGameplayStatics.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeInteractionInterface.cpp" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Core/RougeInteractionInterface.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/ActionRougelike/Player/RougeInteractionComponent.cpp" root0="FORCE_HIGHLIGHTING" />
@@ -268,7 +280,7 @@
       <workItem from="1774446311518" duration="377000" />
       <workItem from="1774446704805" duration="64089000" />
       <workItem from="1776000184718" duration="12632000" />
-      <workItem from="1776067715908" duration="34266000" />
+      <workItem from="1776067715908" duration="37087000" />
     </task>
     <servers />
   </component>

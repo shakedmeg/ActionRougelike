@@ -3,6 +3,8 @@
 
 namespace SharedGameplayTag
 {
+	UE_DEFINE_GAMEPLAY_TAG(Attribute_Health, "Attribute.Health")
+	UE_DEFINE_GAMEPLAY_TAG(Attribute_MaxHealth, "Attribute.MaxHealth")
 	UE_DEFINE_GAMEPLAY_TAG(Action_PrimaryAttack, "Action.PrimaryAttack")
 	UE_DEFINE_GAMEPLAY_TAG(Action_SecondaryAttack, "Action.SecondaryAttack")
 	UE_DEFINE_GAMEPLAY_TAG(Action_SpecialAttack, "Action.SpecialAttack")

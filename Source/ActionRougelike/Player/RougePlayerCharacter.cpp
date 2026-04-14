@@ -49,7 +49,7 @@ float ARougePlayerCharacter::TakeDamage(float DamageAmount, FDamageEvent const& 
 {
 	float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	
-	ActionSystemComponent->ApplyHealthChange(-ActualDamage);
+	ActionSystemComponent->ApplyAttributeChange(SharedGameplayTag::Attribute_Health,-ActualDamage, Base);
 	
 	return ActualDamage;
 }

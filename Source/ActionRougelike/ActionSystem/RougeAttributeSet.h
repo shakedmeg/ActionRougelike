@@ -36,6 +36,10 @@ UCLASS()
 class ACTIONROUGELIKE_API URougeAttributeSet : public UObject
 {
 	GENERATED_BODY()
+	
+public:
+	
+	virtual void PostAttributeChanged() {};
 };
 
 
@@ -51,6 +55,8 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category = Attributes)
 	FRougeAttribute MaxHealth;
+	
+	virtual void PostAttributeChanged() override;
 	
 	URougeHealthAttributeSet();
 	

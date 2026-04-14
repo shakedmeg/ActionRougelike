@@ -4,6 +4,7 @@
 #include "RougeBTTask_HealSelf.h"
 
 #include "AIController.h"
+#include "SharedGameplayTags.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
 
 
@@ -19,7 +20,7 @@ EBTNodeResult::Type URougeBTTask_HealSelf::ExecuteTask(UBehaviorTreeComponent& O
 	
 	if (ensure(ActionComp))
 	{
-		ActionComp->ApplyHealthChange(HealingAmount);
+		ActionComp->ApplyAttributeChange(SharedGameplayTag::Attribute_Health, HealingAmount, Base);
 		return EBTNodeResult::Succeeded;
 	}
 	

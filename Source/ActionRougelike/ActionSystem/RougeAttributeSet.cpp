@@ -8,3 +8,8 @@ URougeHealthAttributeSet::URougeHealthAttributeSet()
 	Health = FRougeAttribute(100);
 	MaxHealth = FRougeAttribute(Health.GetValue());
 }
+
+void URougeHealthAttributeSet::PostAttributeChanged()
+{
+	Health.Base = FMath::Clamp(Health.Base, 0.0f, MaxHealth.GetValue());
+}
