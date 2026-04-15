@@ -107,9 +107,19 @@ void URougeActionSystemComponent::ApplyAttributeChange(FGameplayTag AttributeTag
 	
 	Attributes->PostAttributeChanged();
 	
+	// Native C++ listeners 
 	if (FOnAttributeChanged* Event = AttributeListeners.Find(AttributeTag))
 	{
 		Event->Broadcast(AttributeTag, FoundAttribute->GetValue(), OldValue);
+	}
+	
+	// Blueprint listeners
+	if (TArray<FOnAttributeDynamicChanged>* Events = AttributeDynamicListeners.Find(AttributeTag))
+	{
+		for (FOnAttributeDynamicChanged& Event : *Events)
+		{
+			Event.Execute(AttributeTag, FoundAttribute->GetValue(), OldValue);
+		}
 	}
 	
 	UE_LOGFMT(LogTemp, Log, "Attribute: {0}, New: {1}, Old: {2}", AttributeTag.ToString(), FoundAttribute->GetValue(), OldValue);
@@ -122,7 +132,20 @@ FRougeAttribute* URougeActionSystemComponent::GetAttribute(FGameplayTag InAttrib
 	return FoundAttribute;
 }
 
+float URougeActionSystemComponent::GetAttributeValue(FGameplayTag InAttributeTag) const
+{
+	FRougeAttribute* FoundAttribute = GetAttribute(InAttributeTag);
+	return FoundAttribute->GetValue();
+}
+
 FOnAttributeChanged& URougeActionSystemComponent::GetAttributeListener(FGameplayTag InAttributeTag)
 {
 	return AttributeListeners.FindOrAdd(InAttributeTag);
+}
+
+void URougeActionSystemComponent::AddDynamicAttributeListener(FOnAttributeDynamicChanged Event,
+	FGameplayTag AttributeTag)
+{
+	TArray<FOnAttributeDynamicChanged>& Events = AttributeDynamicListeners.FindOrAdd(AttributeTag);
+	Events.Add(Event);
 }

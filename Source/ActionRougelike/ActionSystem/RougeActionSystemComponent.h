@@ -21,7 +21,10 @@ enum EAttributeModifyType
 	Invalid
 };
 
+// Native C++ delegate
 DECLARE_MULTICAST_DELEGATE_ThreeParams(FOnAttributeChanged, FGameplayTag /*AttributeTag*/, float /*NewAttributeValue*/, float /*OldAttributeValue*/);
+// Blueprint delegate
+DECLARE_DYNAMIC_DELEGATE_ThreeParams(FOnAttributeDynamicChanged, FGameplayTag, AttributeTag, float, NewAttributeValue, float, OldAttributeValue);
 
 
 UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
@@ -41,7 +44,13 @@ public:
 	
 	FRougeAttribute* GetAttribute(FGameplayTag InAttributeTag) const;
 	
+	UFUNCTION(BlueprintCallable)
+	float GetAttributeValue(FGameplayTag InAttributeTag) const;
+	
 	FOnAttributeChanged& GetAttributeListener(FGameplayTag InAttributeTag);
+	
+	UFUNCTION(BlueprintCallable, DisplayName="Add Attribute Listener", meta = (Keywords="events,delegate"))
+	void AddDynamicAttributeListener(FOnAttributeDynamicChanged Event, FGameplayTag AttributeTag);
 	
 	virtual void InitializeComponent() override;
 
@@ -62,6 +71,8 @@ protected:
 	TSubclassOf<URougeAttributeSet> AttributeSetClass;
 	
 	TMap<FGameplayTag, FOnAttributeChanged> AttributeListeners;
+	
+	TMap<FGameplayTag, TArray<FOnAttributeDynamicChanged>> AttributeDynamicListeners;
 	
 	UPROPERTY()
 	TArray<TObjectPtr<URougeAction>> Actions;
