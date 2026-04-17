@@ -11,6 +11,12 @@
 URougePawnAttributeSet::URougePawnAttributeSet()
 {
 	MoveSpeed = FRougeAttribute(550.0f);
+	MoveSpeedMultiplier = FRougeAttribute(1.0f);
+}
+
+URougePlayerAttributeSet::URougePlayerAttributeSet()
+{
+	Rage = FRougeAttribute(0);
 }
 
 URougeMonsterAttributeSet::URougeMonsterAttributeSet()
@@ -45,7 +51,8 @@ void URougePawnAttributeSet::PostAttributeChanged()
 void URougePawnAttributeSet::ApplyMoveSpeed()
 {
 	ACharacter* OwningCharacter = Cast<ACharacter>(GetOwningComponent()->GetOwner());
-	OwningCharacter->GetCharacterMovement()->MaxWalkSpeed = MoveSpeed.GetValue();	
+	float Speed = MoveSpeed.GetValue() * MoveSpeedMultiplier.GetValue();
+	OwningCharacter->GetCharacterMovement()->MaxWalkSpeed = Speed;
 }
 
 URougeActionSystemComponent* URougeAttributeSet::GetOwningComponent() const

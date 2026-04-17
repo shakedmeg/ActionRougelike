@@ -79,6 +79,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = Attributes)
 	FRougeAttribute MoveSpeed;
 	
+	UPROPERTY(EditAnywhere, Category = Attributes)
+	FRougeAttribute MoveSpeedMultiplier;
+	
 	virtual void InitializeAttributes();
 	
 	virtual void PostAttributeChanged() override;
@@ -93,8 +96,15 @@ UCLASS()
 class URougePlayerAttributeSet : public URougePawnAttributeSet
 {
 	GENERATED_BODY()
-};
+	
+public:
 
+	UPROPERTY(EditAnywhere, Category = Attributes)
+	FRougeAttribute Rage;
+	
+	URougePlayerAttributeSet();
+
+};
 
 UCLASS()
 class URougeMonsterAttributeSet : public URougePawnAttributeSet

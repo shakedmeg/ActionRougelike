@@ -3,6 +3,7 @@
 
 #include "RougeAction.h"
 #include "RougeActionSystemComponent.h"
+#include "RougeAttributeSet.h"
 
 void URougeAction::StartAction_Implementation()
 {
@@ -13,7 +14,14 @@ void URougeAction::StartAction_Implementation()
 	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ActionName.ToString(), GameTime);
 	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ("ActionName", ActionName.ToString()), ("WorldTime", GameTime));
 	
-	GetOwningComponent()->ActiveGameplayTags.AppendTags(GrantTags);
+	URougeActionSystemComponent* ActionComponent = GetOwningComponent(); 
+	
+	ActionComponent->ActiveGameplayTags.AppendTags(GrantTags);
+	
+	for (auto ConsumeTag : ConsumeTags)
+	{
+		ActionComponent->ApplyAttributeChange(ConsumeTag.Key, -ConsumeTag.Value, Modifier);
+	}
 }
 
 void URougeAction::StopAction_Implementation()
@@ -42,7 +50,18 @@ bool URougeAction::CanStart() const
 		return false;
 	}
 	
-	if (GetOwningComponent()->ActiveGameplayTags.HasAny(BlockedTags))
+	URougeActionSystemComponent* ActionComponent = GetOwningComponent();
+
+	for (auto ConsumeTag : ConsumeTags)
+	{
+		float BaseAttribute = ActionComponent->GetAttributeValue(ConsumeTag.Key);
+		if (BaseAttribute < ConsumeTag.Value)
+		{
+			return false;
+		}
+	}
+	
+	if (ActionComponent->ActiveGameplayTags.HasAny(BlockedTags))
 	{
 		return false;
 	}
