@@ -5,13 +5,13 @@
 
 #include "SharedGameplayTags.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
+#include "ActionSystem/RougeAttributeSet.h"
 
 
 ARougeAICharacter::ARougeAICharacter()
 {
-	PrimaryActorTick.bCanEverTick = true;
-	
 	ActionSystemComponent = CreateDefaultSubobject<URougeActionSystemComponent>(TEXT("ActionSystemComp"));
+	ActionSystemComponent->SetDefaultAttributeSet(URougeMonsterAttributeSet::StaticClass());
 }
 
 float ARougeAICharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,

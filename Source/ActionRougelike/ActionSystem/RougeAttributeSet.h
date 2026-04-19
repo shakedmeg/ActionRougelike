@@ -34,7 +34,7 @@ struct FRougeAttribute
 /**
  * 
  */
-UCLASS()
+UCLASS(EditInlineNew)
 class ACTIONROUGELIKE_API URougeAttributeSet : public UObject
 {
 	GENERATED_BODY()
@@ -56,10 +56,10 @@ class URougeHealthAttributeSet : public URougeAttributeSet
 
 public:
 	
-	UPROPERTY(EditAnywhere, Category = Attributes)
+	UPROPERTY(EditAnywhere, Category = Health)
 	FRougeAttribute Health;
 	
-	UPROPERTY(EditAnywhere, Category = Attributes)
+	UPROPERTY(EditAnywhere, Category = Health)
 	FRougeAttribute MaxHealth;
 	
 	virtual void PostAttributeChanged() override;
@@ -76,10 +76,10 @@ class URougePawnAttributeSet : public URougeHealthAttributeSet
 public:
 	
 	// Walking speed directly linked with Character Movement Component
-	UPROPERTY(EditAnywhere, Category = Attributes)
+	UPROPERTY(EditAnywhere, Category = MoveSpeed)
 	FRougeAttribute MoveSpeed;
 	
-	UPROPERTY(EditAnywhere, Category = Attributes)
+	UPROPERTY(EditAnywhere, Category = MoveSpeed)
 	FRougeAttribute MoveSpeedMultiplier;
 	
 	virtual void InitializeAttributes();
@@ -99,7 +99,7 @@ class URougePlayerAttributeSet : public URougePawnAttributeSet
 	
 public:
 
-	UPROPERTY(EditAnywhere, Category = Attributes)
+	UPROPERTY(EditAnywhere, Category = Resources)
 	FRougeAttribute Rage;
 	
 	URougePlayerAttributeSet();

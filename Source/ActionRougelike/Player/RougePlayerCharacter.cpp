@@ -6,6 +6,7 @@
 #include "GameplayTagContainer.h"
 #include "SharedGameplayTags.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
+#include "ActionSystem/RougeAttributeSet.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/PawnMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -25,6 +26,7 @@ ARougePlayerCharacter::ARougePlayerCharacter()
 	CameraComponent->SetupAttachment(SpringArmComponent);
 	
 	ActionSystemComponent = CreateDefaultSubobject<URougeActionSystemComponent>(TEXT("ActionSystemComp"));
+	ActionSystemComponent->SetDefaultAttributeSet(URougePlayerAttributeSet::StaticClass());
 }
 
 // Called to bind functionality to input

@@ -27,7 +27,7 @@ DECLARE_MULTICAST_DELEGATE_ThreeParams(FOnAttributeChanged, FGameplayTag /*Attri
 DECLARE_DYNAMIC_DELEGATE_ThreeParams(FOnAttributeDynamicChanged, FGameplayTag, AttributeTag, float, NewAttributeValue, float, OldAttributeValue);
 
 
-UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent))
+UCLASS(ClassGroup=(Custom), meta=(BlueprintSpawnableComponent), HideCategories=(Navigation, Cooking, Tags))
 class ACTIONROUGELIKE_API URougeActionSystemComponent : public UActorComponent
 {
 	GENERATED_BODY()
@@ -56,6 +56,8 @@ public:
 	void RemoveDynamicAttributeListener(FOnAttributeDynamicChanged Event);
 	
 	virtual void InitializeComponent() override;
+	
+	void SetDefaultAttributeSet(TSubclassOf<URougeAttributeSet> AttributeSetClass);
 
 	void GrantAction(TSubclassOf<URougeAction> NewActionClass);
 	
@@ -65,13 +67,10 @@ public:
 
 protected:
 	
-	UPROPERTY()
+	UPROPERTY(EditAnywhere, Instanced, NoClear, Category = ActionSystem)
 	TObjectPtr<URougeAttributeSet> Attributes;
 	
 	TMap<FGameplayTag, FRougeAttribute*> CachedAttributes;
-	
-	UPROPERTY(EditAnywhere, Category = Attributes, NoClear)
-	TSubclassOf<URougeAttributeSet> AttributeSetClass;
 	
 	TMap<FGameplayTag, FOnAttributeChanged> AttributeListeners;
 	
@@ -80,6 +79,6 @@ protected:
 	UPROPERTY()
 	TArray<TObjectPtr<URougeAction>> Actions;
 	
-	UPROPERTY(EditAnywhere, Category = "Actions")
+	UPROPERTY(EditAnywhere, Category = ActionSystem)
 	TArray<TSubclassOf<URougeAction>> DefaultActions;
 };

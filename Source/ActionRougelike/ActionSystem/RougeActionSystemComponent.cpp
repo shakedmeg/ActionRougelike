@@ -9,15 +9,19 @@
 URougeActionSystemComponent::URougeActionSystemComponent()
 {
 	bWantsInitializeComponent = true;
-	
-	AttributeSetClass = URougeAttributeSet::StaticClass();
 }
 
 void URougeActionSystemComponent::InitializeComponent()
 {
 	Super::InitializeComponent();
 	
-	Attributes = NewObject<URougeAttributeSet>(this, AttributeSetClass);
+	// Fallback for Blueprint and CPP having not yet defined a default
+	if (Attributes == nullptr)
+	{
+		Attributes = NewObject<URougeAttributeSet>(this, URougeAttributeSet::StaticClass());
+		UE_LOG(LogTemp, Warning, TEXT("No default AttributeSet. Set using SetDefaultAttributeSet() "
+								"during Actor Construction or assign in Blueprint ActionComponent for %s"), *GetNameSafe(GetOwner()));
+	}
 	
 	for (TFieldIterator<FStructProperty> PropIt(Attributes->GetClass()); PropIt; ++PropIt)
 	{
@@ -38,6 +42,15 @@ void URougeActionSystemComponent::InitializeComponent()
 			GrantAction(ActionClass);
 		}
 	}
+}
+
+void URougeActionSystemComponent::SetDefaultAttributeSet(TSubclassOf<URougeAttributeSet> AttributeSetClass)
+{
+	check(!HasBeenInitialized());
+	
+	// Only available during constructors of UObjects
+	FObjectInitializer& ObjectInitializer = FObjectInitializer::Get();
+	Attributes = Cast<URougeAttributeSet>(ObjectInitializer.CreateDefaultSubobject(this, TEXT("Attributes"), AttributeSetClass,  AttributeSetClass));
 }
 
 void URougeActionSystemComponent::BeginPlay()
