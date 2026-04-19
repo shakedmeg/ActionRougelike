@@ -68,6 +68,8 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	TObjectPtr<URougeActionSystemComponent> ActionSystemComponent;
 	
+	FTimerHandle OverlayTimerHandle;
+	
 	void Move(const FInputActionValue& InValue);
 	
 	void Look(const FInputActionInstance& InValue);

@@ -22,4 +22,6 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components")
 	TObjectPtr<URougeActionSystemComponent> ActionSystemComponent;
+	
+	FTimerHandle OverlayTimerHandle;
 };
