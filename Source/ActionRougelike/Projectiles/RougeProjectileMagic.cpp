@@ -4,6 +4,11 @@
 #include "RougeProjectileMagic.h"
 #include "Kismet/GameplayStatics.h"
 
+ARougeProjectileMagic::ARougeProjectileMagic()
+{
+	InitialLifeSpan = 8.0f;
+}
+
 void ARougeProjectileMagic::OnActorHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	Super::OnActorHit(HitComponent, OtherActor, OtherComp, NormalImpulse, Hit);

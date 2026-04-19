@@ -2,6 +2,8 @@
 
 
 #include "RougeActionSystemComponent.h"
+
+#include "ActionRougelike.h"
 #include "RougeAction.h"
 #include "RougeAttributeSet.h"
 
@@ -19,7 +21,7 @@ void URougeActionSystemComponent::InitializeComponent()
 	if (Attributes == nullptr)
 	{
 		Attributes = NewObject<URougeAttributeSet>(this, URougeAttributeSet::StaticClass());
-		UE_LOG(LogTemp, Warning, TEXT("No default AttributeSet. Set using SetDefaultAttributeSet() "
+		UE_LOG(LogGame, Warning, TEXT("No default AttributeSet. Set using SetDefaultAttributeSet() "
 								"during Actor Construction or assign in Blueprint ActionComponent for %s"), *GetNameSafe(GetOwner()));
 	}
 	
@@ -79,7 +81,7 @@ void URougeActionSystemComponent::StartAction(FGameplayTag InActionName)
 		}
 	}
 	
-	UE_LOG(LogTemp, Warning, TEXT("No Action found with name %s"), *InActionName.ToString());
+	UE_LOG(LogGame, Warning, TEXT("No Action found with name %s"), *InActionName.ToString());
 }
 
 void URougeActionSystemComponent::StopAction(FGameplayTag InActionName)
@@ -96,7 +98,7 @@ void URougeActionSystemComponent::StopAction(FGameplayTag InActionName)
 		}
 	}
 	
-	UE_LOG(LogTemp, Warning, TEXT("No Action found with name %s"), *InActionName.ToString());
+	UE_LOG(LogGame, Warning, TEXT("No Action found with name %s"), *InActionName.ToString());
 }
 
 void URougeActionSystemComponent::ApplyAttributeChange(FGameplayTag AttributeTag, float Delta, EAttributeModifyType ModifyType)
@@ -139,12 +141,12 @@ void URougeActionSystemComponent::ApplyAttributeChange(FGameplayTag AttributeTag
 			if (!bIsBound)
 			{
 				Events->RemoveAt(i);
-				UE_LOG(LogTemp, Log, TEXT("Cleaned up expired attribute delegate for %s"), *GetNameSafe(GetOwner()));
+				UE_LOG(LogGame, Log, TEXT("Cleaned up expired attribute delegate for %s"), *GetNameSafe(GetOwner()));
 			}
 		}
 	}
 	
-	UE_LOGFMT(LogTemp, Log, "Attribute: {0}, New: {1}, Old: {2}", AttributeTag.ToString(), FoundAttribute->GetValue(), OldValue);
+	UE_LOGFMT(LogGame, Log, "Attribute: {0}, New: {1}, Old: {2}", AttributeTag.ToString(), FoundAttribute->GetValue(), OldValue);
 }
 
 FRougeAttribute* URougeActionSystemComponent::GetAttribute(FGameplayTag InAttributeTag) const
@@ -178,7 +180,7 @@ void URougeActionSystemComponent::RemoveDynamicAttributeListener(FOnAttributeDyn
 	{
 		if (Listener.Value.RemoveSingle(Event) > 0)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("successfully removed blueprint binding"));
+			UE_LOG(LogGame, Warning, TEXT("successfully removed blueprint binding"));
 			break;
 		}
 	}

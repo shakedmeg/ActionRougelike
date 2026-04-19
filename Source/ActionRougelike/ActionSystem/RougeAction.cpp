@@ -2,6 +2,8 @@
 
 
 #include "RougeAction.h"
+
+#include "ActionRougelike.h"
 #include "RougeActionSystemComponent.h"
 #include "RougeAttributeSet.h"
 
@@ -11,8 +13,8 @@ void URougeAction::StartAction_Implementation()
 	
 	float GameTime = GetWorld()->TimeSeconds;
 	
-	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ActionName.ToString(), GameTime);
-	UE_LOGFMT(LogTemp, Log, "Started Action {ActionName} - {WorldTime}", ("ActionName", ActionName.ToString()), ("WorldTime", GameTime));
+	UE_LOGFMT(LogGame, Log, "Started Action {ActionName} - {WorldTime}", ActionName.ToString(), GameTime);
+	UE_LOGFMT(LogGame, Log, "Started Action {ActionName} - {WorldTime}", ("ActionName", ActionName.ToString()), ("WorldTime", GameTime));
 	
 	URougeActionSystemComponent* ActionComponent = GetOwningComponent(); 
 	
@@ -29,8 +31,8 @@ void URougeAction::StopAction_Implementation()
 	bIsRunning = false;
 	
 	float GameTime = GetWorld()->TimeSeconds;
-	UE_LOGFMT(LogTemp, Log, "Stopped Action {ActionName} - {WorldTime}", ActionName.ToString(), GameTime);
-	UE_LOGFMT(LogTemp, Log, "Stopped Action {ActionName} - {WorldTime}", ("ActionName", ActionName.ToString()), ("WorldTime", GameTime));
+	UE_LOGFMT(LogGame, Log, "Stopped Action {ActionName} - {WorldTime}", ActionName.ToString(), GameTime);
+	UE_LOGFMT(LogGame, Log, "Stopped Action {ActionName} - {WorldTime}", ("ActionName", ActionName.ToString()), ("WorldTime", GameTime));
 	
 	CooldownUntil = GetWorld()->TimeSeconds + CooldownTime;
 	
@@ -46,7 +48,7 @@ bool URougeAction::CanStart() const
 	
 	if (GetCooldownTimeRemaining() >0.0f)
 	{
-		UE_LOG(LogTemp, Log, TEXT("Cooldown remaining: %f"), GetCooldownTimeRemaining());
+		UE_LOG(LogGame, Log, TEXT("Cooldown remaining: %f"), GetCooldownTimeRemaining());
 		return false;
 	}
 	

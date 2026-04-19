@@ -4,6 +4,7 @@
 #include "RougeBTDecorator_IsLowHealth.h"
 
 #include "AIController.h"
+#include "SharedGameplayTags.h"
 #include "ActionSystem/RougeActionSystemComponent.h"
 
 bool URougeBTDecorator_IsLowHealth::CalculateRawConditionValue(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) const
@@ -16,9 +17,9 @@ bool URougeBTDecorator_IsLowHealth::CalculateRawConditionValue(UBehaviorTreeComp
 	
 	if (ensure(ActionComp))
 	{
-		check(false);
-		return false;
-		// return (ActionComp->GetHealth() / ActionComp->GetMaxHealth()) < LowHealthThreshold;
+		float HealthFraction = ActionComp->GetAttributeValue(SharedGameplayTag::Attribute_Health) /
+			ActionComp->GetAttributeValue(SharedGameplayTag::Attribute_MaxHealth);
+		return HealthFraction < LowHealthThreshold;
 	}
 	
 	return false;

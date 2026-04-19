@@ -14,8 +14,15 @@ ARougeAICharacter::ARougeAICharacter()
 	ActionSystemComponent->SetDefaultAttributeSet(URougeMonsterAttributeSet::StaticClass());
 }
 
+void ARougeAICharacter::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	
+	GetMesh()->SetOverlayMaterialMaxDrawDistance(1);
+}
+
 float ARougeAICharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
-	AController* EventInstigator, AActor* DamageCauser)
+                                    AController* EventInstigator, AActor* DamageCauser)
 {
 	float ActualDamage = Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 	

@@ -17,6 +17,10 @@ class ACTIONROUGELIKE_API ARougeProjectileMagic : public ARougeProjectile
 {
 	GENERATED_BODY()
 	
+public:
+	ARougeProjectileMagic();
+	
+	
 protected:
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Damage")
