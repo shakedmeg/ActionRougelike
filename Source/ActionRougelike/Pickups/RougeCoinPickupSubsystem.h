@@ -1,0 +1,30 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#pragma once
+
+#include "CoreMinimal.h"
+#include "Subsystems/WorldSubsystem.h"
+#include "RougeCoinPickupSubsystem.generated.h"
+
+/**
+ * 
+ */
+UCLASS()
+class ACTIONROUGELIKE_API URougeCoinPickupSubsystem : public UTickableWorldSubsystem
+{
+	GENERATED_BODY()
+	
+public:
+	void AddCoinPickup(TArray<FVector> NewLocations, TArray<int32> NewAmounts);
+	
+	virtual void Tick(float DeltaTime) override;
+	
+	virtual TStatId GetStatId() const override
+	{
+		RETURN_QUICK_DECLARE_CYCLE_STAT(RougeCoinPickupSubsystem, STATGROUP_Tickables);
+	}
+	
+protected:
+	TArray<FVector> CoinLocations;
+	TArray<int32> CoinAmounts;
+};
