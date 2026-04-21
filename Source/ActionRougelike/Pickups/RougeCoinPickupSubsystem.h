@@ -17,6 +17,8 @@ class ACTIONROUGELIKE_API URougeCoinPickupSubsystem : public UTickableWorldSubsy
 public:
 	void AddCoinPickup(TArray<FVector> NewLocations, TArray<int32> NewAmounts);
 	
+	void RemoveCoinPickup(int32 IndexToRemove);
+	
 	virtual void Tick(float DeltaTime) override;
 	
 	virtual TStatId GetStatId() const override
